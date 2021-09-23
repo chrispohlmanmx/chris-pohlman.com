@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "MyWebFont";
+    src: url("fonts/WebFont.woff") format("woff");
+}
+
+body {
+    background-color: ivory;
+}
+
+h1 {
+    color: #202121;
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: MyWebFont;
+}
