@@ -88,138 +88,155 @@
         <div id="formcontainer">
             <!-- enter the form code below -->
             <form
-                id="survery"
-                name="survery"
+                id="survey"
+                name="survey"
                 method="post"
                 action="javascript:submitform();"
             >
-            <form id = "survey" name = "survey"  method = "post" action = "javascript:submitform();">
-              <fieldset class = "labelfloatleft"><legend>Contact Information</legend>
-          
-                <label for = "firstname">First Name</label>
-                <input type = "text" name = "firstname" id = "firstname" class = "text" />
-          
-                <label for = "lastname">Last Name</label>
-                <input type = "text" name = "lastname" id = "lastname" class = "text" value = "Sullivan" />
-          
-                <label for = "emailaddress">Email Address</label>
-                <input type = "email" name = "emailaddress" id = "emailaddress" 
-                size = "40" class = "text" placeholder = "name@anywhere.com" />
-              </fieldset>
+                <fieldset class="labelfloatleft">
+                    <legend>Contact Information</legend>
 
-              <fieldset>
-                <legend>Personal Information</legend>
-
-                <input type="radio" name="gender" id="male" value="male" />
-                <label for="male">Male</label>
-
-                <input
-                    type="radio"
-                    name="gender"
-                    id="female"
-                    value="female"
-                />
-                <label for="female">Female</label>
-
-                <input
-                    type="radio"
-                    name="gender"
-                    id="GenderqueerNon-Binary"
-                    value="GenderqueerNon-Binary"
-                />
-                <label for="GenderqueerNon-Binary"
-                    >Genderqueer/Non-Binary</label
-                >
-
-                <input
-                    type="radio"
-                    name="gender"
-                    id="hungry"
-                    value="hungry"
-                    checked="checked"
-                />
-                <label for="hungry">Hungry</label>
-
-                <fieldset class="group">
-                    <label for="yearbirth">Year of Birth</label>
+                    <label for="firstname">First Name</label>
                     <input
                         type="text"
-                        name="yearbirth"
-                        id="yearbirth"
+                        name="firstname"
+                        id="firstname"
                         class="text"
-                        size="4"
-                        maxlength="4"
+                    />
+
+                    <label for="lastname">Last Name</label>
+                    <input
+                        type="text"
+                        name="lastname"
+                        id="lastname"
+                        class="text"
+                        value="Sullivan"
+                    />
+
+                    <label for="emailaddress">Email Address</label>
+                    <input
+                        type="email"
+                        name="emailaddress"
+                        id="emailaddress"
+                        size="40"
+                        class="text"
+                        placeholder="name@anywhere.com"
                     />
                 </fieldset>
-            </fieldset>
 
-            <fieldset>
-              <legend>
-                  I would be interested in: (check all that apply)
-              </legend>
+                <fieldset>
+                    <legend>Personal Information</legend>
 
-              <fieldset class="group">
-                  <input
-                      type="checkbox"
-                      name="interested"
-                      id="mailinglist"
-                      value="mailinglist"
-                      checked="checked"
-                  />
-                  <label for="mailinglist"
-                      >Please add me to the mailing list</label
-                  >
-              </fieldset>
+                    <input type="radio" name="gender" id="male" value="male" />
+                    <label for="male">Male</label>
 
-              <fieldset class="group">
-                  <input
-                      type="checkbox"
-                      name="interested"
-                      id="ireland"
-                      value="ireland"
-                  />
-                  <label for="ireland">I'd like to visit Ireland</label>
-              </fieldset>
+                    <input
+                        type="radio"
+                        name="gender"
+                        id="female"
+                        value="female"
+                    />
+                    <label for="female">Female</label>
 
-              <fieldset class="group">
-                  <input
-                      type="checkbox"
-                      name="interested"
-                      id="reunion"
-                      value="reunion"
-                  />
-                  <label for="reunion"
-                      >I'll help to organize a family reunion</label
-                  >
-              </fieldset>
+                    <input
+                        type="radio"
+                        name="gender"
+                        id="GenderqueerNon-Binary"
+                        value="GenderqueerNon-Binary"
+                    />
+                    <label for="GenderqueerNon-Binary"
+                        >Genderqueer/Non-Binary</label
+                    >
 
-              <fieldset class="group">
-                  <input
-                      type="checkbox"
-                      name="interested"
-                      id="familytree"
-                      value="familytree"
-                  />
-                  <label for="familytree"
-                      >I'll help put together the family tree
-                      documentation</label
-                  >
-              </fieldset>
+                    <input
+                        type="radio"
+                        name="gender"
+                        id="hungry"
+                        value="hungry"
+                        checked="checked"
+                    />
+                    <label for="hungry">Hungry</label>
 
-              <fieldset class="group">
-                  <input
-                      type="checkbox"
-                      name="interested"
-                      id="newsletter"
-                      value="newsletter"
-                  />
-                  <label for="newsletter"
-                      >I'll help put together a newsletter</label
-                  >
-              </fieldset>
-          </fieldset>
+                    <fieldset class="group">
+                        <label for="yearbirth">Year of Birth</label>
+                        <input
+                            type="text"
+                            name="yearbirth"
+                            id="yearbirth"
+                            class="text"
+                            size="4"
+                            maxlength="4"
+                        />
+                    </fieldset>
+                </fieldset>
 
-          <fieldset>
+                <fieldset>
+                    <legend>
+                        I would be interested in: (check all that apply)
+                    </legend>
+
+                    <fieldset class="group">
+                        <input
+                            type="checkbox"
+                            name="interested"
+                            id="mailinglist"
+                            value="mailinglist"
+                            checked="checked"
+                        />
+                        <label for="mailinglist"
+                            >Please add me to the mailing list</label
+                        >
+                    </fieldset>
+
+                    <fieldset class="group">
+                        <input
+                            type="checkbox"
+                            name="interested"
+                            id="ireland"
+                            value="ireland"
+                        />
+                        <label for="ireland">I'd like to visit Ireland</label>
+                    </fieldset>
+
+                    <fieldset class="group">
+                        <input
+                            type="checkbox"
+                            name="interested"
+                            id="reunion"
+                            value="reunion"
+                        />
+                        <label for="reunion"
+                            >I'll help to organize a family reunion</label
+                        >
+                    </fieldset>
+
+                    <fieldset class="group">
+                        <input
+                            type="checkbox"
+                            name="interested"
+                            id="familytree"
+                            value="familytree"
+                        />
+                        <label for="familytree"
+                            >I'll help put together the family tree
+                            documentation</label
+                        >
+                    </fieldset>
+
+                    <fieldset class="group">
+                        <input
+                            type="checkbox"
+                            name="interested"
+                            id="newsletter"
+                            value="newsletter"
+                        />
+                        <label for="newsletter"
+                            >I'll help put together a newsletter</label
+                        >
+                    </fieldset>
+                </fieldset>
+
+                <fieldset>
                     <legend>Send a message</legend>
 
                     <label for="subject">Subject</label>
