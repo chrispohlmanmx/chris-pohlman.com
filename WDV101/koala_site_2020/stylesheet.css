@@ -3,20 +3,87 @@
     src: url("fonts/WebFont.woff") format("woff");
 }
 
+* {
+    box-sizing: border-box;
+    padding: 1em;
+}
+
 body {
     background-color: ivory;
 }
 
-h1 {
+h1,
+h2 {
     color: #202121;
     text-align: center;
-    text-decoration: underline;
+    font-family: MyWebFont;
+}
+
+h1 {
+    border-bottom: 1px solid #202121;
+}
+
+h2 {
+    margin: 10px;
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
 }
 
-h2 {
-    font-family: MyWebFont;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+nav li {
+    display: inline;
+}
+
+a:hover {
+    color: blue;
+}
+
+a.return-link {
+    color: blue;
+}
+img {
+    width: 25%;
+    height: 25%;
+    padding: 5px;
+    border: 2px solid black;
+    background-color: gray;
+    margin: 20px;
+}
+
+.footer {
+    float: left;
+    clear: both;
+}
+
+.logo {
+    display: inline;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.left-img {
+    float: left;
+}
+
+.right-img {
+    float: right;
+}
+
+.banner {
+    margin: 0;
+    padding: 0;
+    background-color: none;
+    border: none;
+    width: 100%;
 }

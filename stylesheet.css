@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "MyWebFont";
+    src: url("fonts/WebFont.woff") format("woff");
+}
+
+* {
+    box-sizing: border-box;
+    background-color: #cdc4ac;
+    font-family: MyWebFont, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+h1 img {
+    width: 30%;
+    height: 20%;
+    float: right;
+    margin: 20px;
+}
+p img {
+    width: 20%;
+    height: 20%;
+    float: left;
+    margin: 20px;
+}
+
+.link-img {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0.5em;
+    margin-top: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+
+.index-link {
+    margin: 2em;
+    margin-left: 0;
+}
+nav ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+a:link {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    color: red;
+}

@@ -1,0 +1,13 @@
+/*CSS for Form on Family_Name pages */
+
+form{
+	margin-top: 1em;
+	border: 2px solid #305704;
+	padding: 1em;
+	font-size: 16px;
+}
+
+#formcontainer {
+	width:47%;
+	float: right;
+}
