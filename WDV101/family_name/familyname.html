@@ -1,89 +1,258 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="formsubmit.js"></script>
-  <link href="form_style.css" rel="stylesheet" type="text/css" />
-  <title>Sullivan Family</title>
-  
-  <style type="text/css"> 
-header {
-  text-align: center;
-  margin: 6px;
-}  
+    <head>
+        <script src="formsubmit.js"></script>
+        <link href="form_style.css" rel="stylesheet" type="text/css" />
+        <title>Sullivan Family</title>
 
-footer {
-  clear: both;
-  text-align: center;
-  margin-top: 20px;
-  padding: 6px;
- }
- 
-img {
-  vertical-align: middle;
-}
-  
-.title{
-  font-size: 3em;
-}
+        <style type="text/css">
+            header {
+                text-align: center;
+                margin: 6px;
+            }
 
-left {
-  float: left;
-}
+            footer {
+                clear: both;
+                text-align: center;
+                margin-top: 20px;
+                padding: 6px;
+            }
 
-#immigration {
-  width: 47%;
-  padding: 10px;
-  float: left;
-  clear: both;
-}
+            img {
+                vertical-align: middle;
+            }
 
-</style>
-</head>
+            .title {
+                font-size: 3em;
+            }
 
-<body>
+            left {
+                float: left;
+            }
 
-<header>
-<img src = "images/ireland.jpg" height = "150"/>
-<span class = "title">The Sullivan Family</span>
-</header>
+            #immigration {
+                width: 47%;
+                padding: 10px;
+                float: left;
+                clear: both;
+            }
+        </style>
+    </head>
 
-<article id="immigration">
+    <body>
+        <header>
+            <img src="images/ireland.jpg" height="150" />
+            <span class="title">The Sullivan Family</span>
+        </header>
 
-<h3>Irish Immigration</h3>
-<p>During the 18th and 19th centuries, many families emigrated from Ireland in search of opportunities and better living conditions. The largest exodus happened in the 1840s during the great potato famine. Potatoes were the main source of food, and a blight destroyed most of the crops. Hundreds of thousands of Irish immigrants left the island, hoping to live in the United States and Canada. It is believed that over 2 million people left Ireland in the 1800s. </p>
+        <article id="immigration">
+            <h3>Irish Immigration</h3>
+            <p>
+                During the 18th and 19th centuries, many families emigrated from
+                Ireland in search of opportunities and better living conditions.
+                The largest exodus happened in the 1840s during the great potato
+                famine. Potatoes were the main source of food, and a blight
+                destroyed most of the crops. Hundreds of thousands of Irish
+                immigrants left the island, hoping to live in the United States
+                and Canada. It is believed that over 2 million people left
+                Ireland in the 1800s.
+            </p>
 
-<p>Many Sullivans were among the Irish immigrants. They settled in places including:</p>
+            <p>
+                Many Sullivans were among the Irish immigrants. They settled in
+                places including:
+            </p>
 
-<ul class="list">
-  <li>New York</li>
-  <li>Nova Scotia</li>
-  <li>Ontario</li>
-  <li>Pennsylvania</li>
-  <li>Quebec</li>
-</ul>
+            <ul class="list">
+                <li>New York</li>
+                <li>Nova Scotia</li>
+                <li>Ontario</li>
+                <li>Pennsylvania</li>
+                <li>Quebec</li>
+            </ul>
 
-<h3>Tell us about yourself!</h3>
+            <h3>Tell us about yourself!</h3>
 
-<p>If you're a Sullivan, or if any of your ancestors are Sullivans, please add your name and information to our database using the form. We'd love it if you could also help us with the newsletter and reunion. Please tell us a bit about yourself as well. Also, feel free to ask questions about ancestry research. If you're planning a trip to Ireland, let us know. We'd love to show you around!</p>
+            <p>
+                If you're a Sullivan, or if any of your ancestors are Sullivans,
+                please add your name and information to our database using the
+                form. We'd love it if you could also help us with the newsletter
+                and reunion. Please tell us a bit about yourself as well. Also,
+                feel free to ask questions about ancestry research. If you're
+                planning a trip to Ireland, let us know. We'd love to show you
+                around!
+            </p>
+        </article>
+        <!-- end immigration -->
 
+        <div id="formcontainer">
+            <!-- enter the form code below -->
+            <form
+                id="survery"
+                name="survery"
+                method="post"
+                action="javascript:submitform();"
+            >
+            <form id = "survey" name = "survey"  method = "post" action = "javascript:submitform();">
+              <fieldset class = "labelfloatleft"><legend>Contact Information</legend>
+          
+                <label for = "firstname">First Name</label>
+                <input type = "text" name = "firstname" id = "firstname" class = "text" />
+          
+                <label for = "lastname">Last Name</label>
+                <input type = "text" name = "lastname" id = "lastname" class = "text" value = "Sullivan" />
+          
+                <label for = "emailaddress">Email Address</label>
+                <input type = "email" name = "emailaddress" id = "emailaddress" 
+                size = "40" class = "text" placeholder = "name@anywhere.com" />
+              </fieldset>
 
-</article> <!-- end immigration -->
+              <fieldset>
+                <legend>Personal Information</legend>
 
-<div id = "formcontainer">
-<!-- enter the form code below -->
-<form>
+                <input type="radio" name="gender" id="male" value="male" />
+                <label for="male">Male</label>
 
+                <input
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    value="female"
+                />
+                <label for="female">Female</label>
 
-</form>
-  
+                <input
+                    type="radio"
+                    name="gender"
+                    id="GenderqueerNon-Binary"
+                    value="GenderqueerNon-Binary"
+                />
+                <label for="GenderqueerNon-Binary"
+                    >Genderqueer/Non-Binary</label
+                >
 
-</div> <!-- end formcontainer -->
-<footer>
-<p>Patrick Sullivan &bull; 37 Merrion Square &bull; Dublin 2 &bull; Ireland</p>
+                <input
+                    type="radio"
+                    name="gender"
+                    id="hungry"
+                    value="hungry"
+                    checked="checked"
+                />
+                <label for="hungry">Hungry</label>
 
-</footer> 
+                <fieldset class="group">
+                    <label for="yearbirth">Year of Birth</label>
+                    <input
+                        type="text"
+                        name="yearbirth"
+                        id="yearbirth"
+                        class="text"
+                        size="4"
+                        maxlength="4"
+                    />
+                </fieldset>
+            </fieldset>
 
+            <fieldset>
+              <legend>
+                  I would be interested in: (check all that apply)
+              </legend>
 
+              <fieldset class="group">
+                  <input
+                      type="checkbox"
+                      name="interested"
+                      id="mailinglist"
+                      value="mailinglist"
+                      checked="checked"
+                  />
+                  <label for="mailinglist"
+                      >Please add me to the mailing list</label
+                  >
+              </fieldset>
 
-</body>
+              <fieldset class="group">
+                  <input
+                      type="checkbox"
+                      name="interested"
+                      id="ireland"
+                      value="ireland"
+                  />
+                  <label for="ireland">I'd like to visit Ireland</label>
+              </fieldset>
+
+              <fieldset class="group">
+                  <input
+                      type="checkbox"
+                      name="interested"
+                      id="reunion"
+                      value="reunion"
+                  />
+                  <label for="reunion"
+                      >I'll help to organize a family reunion</label
+                  >
+              </fieldset>
+
+              <fieldset class="group">
+                  <input
+                      type="checkbox"
+                      name="interested"
+                      id="familytree"
+                      value="familytree"
+                  />
+                  <label for="familytree"
+                      >I'll help put together the family tree
+                      documentation</label
+                  >
+              </fieldset>
+
+              <fieldset class="group">
+                  <input
+                      type="checkbox"
+                      name="interested"
+                      id="newsletter"
+                      value="newsletter"
+                  />
+                  <label for="newsletter"
+                      >I'll help put together a newsletter</label
+                  >
+              </fieldset>
+          </fieldset>
+
+          <fieldset>
+                    <legend>Send a message</legend>
+
+                    <label for="subject">Subject</label>
+                    <select name="subject" id="subject">
+                        <option value="info">
+                            Providing information about Sullivans
+                        </option>
+                        <option value="visit">Visiting Ireland</option>
+                        <option value="ancestry" selected="selected">
+                            Ancestry research question
+                        </option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="message">Message</label>
+                    <textarea
+                        name="message"
+                        id="message"
+                        rows="10"
+                        cols="45"
+                    ></textarea>
+                </fieldset>
+
+                <input type="submit" value="Send Information" class="button" />
+                <input type="reset" value="Cancel" class="button" />
+            </form>
+        </div>
+        <!-- end formcontainer -->
+        <footer>
+            <p>
+                Patrick Sullivan &bull; 37 Merrion Square &bull; Dublin 2 &bull;
+                Ireland
+            </p>
+        </footer>
+    </body>
 </html>
