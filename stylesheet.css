@@ -59,3 +59,35 @@ a:link {
 a:hover {
     color: red;
 }
+
+#form-container {
+    width: 50%;
+    font-weight: bold;
+    padding: 2em auto;
+    margin: 0 auto;
+}
+
+.text-boxes label {
+    margin-right: 0.5em;
+    width: 150px;
+    float: left;
+    text-align: right;
+}
+
+.text-boxes input {
+    display: block;
+    margin-top: 0.2em;
+    background-color: white;
+}
+
+fieldset {
+    display: block;
+}
+
+.selection select {
+    background-color: white;
+}
+
+.message-area textarea {
+    background-color: white;
+}

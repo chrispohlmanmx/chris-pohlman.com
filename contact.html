@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link
+            rel="stylesheet"
+            href="stylesheet.css"
+            type="text/css"
+            charset="utf-8"
+        />
+        <title>Contact Me</title>
+    </head>
+
+    <body>
+        <h1>Contact Me</h1>
+
+        <div id="form-container">
+            <form
+                class="contact-form"
+                method="post"
+                action="contact_form_response.php"
+            >
+                <fieldset class="text-boxes">
+                    <legend>Your Contact Information</legend>
+
+                    <label for="firstname">First Name</label>
+                    <input
+                        type="text"
+                        name="firstname"
+                        id="firstname"
+                        class="form-text"
+                    />
+
+                    <label for="lastname">Last Name</label>
+                    <input
+                        type="text"
+                        name="lastname"
+                        id="lastname"
+                        class="form-text"
+                    />
+
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        size="40"
+                        placeholder="name@gmail.com"
+                        class="form-text"
+                    />
+                </fieldset>
+
+                <fieldset class="radio">
+                    <legend>Reason for Contact</legend>
+
+                    <input type="radio" name="work" id="work" value="work" />
+                    <label for="work">Job opportunities</label>
+
+                    <input
+                        type="radio"
+                        name="project"
+                        id="project"
+                        value="project"
+                    />
+                    <label for="project">Current project</label>
+
+                    <input type="radio" name="other" id="other" value="other" />
+                    <label for="Other">Other</label>
+                </fieldset>
+
+                <fieldset class="checkbox">
+                    <legend>I'm interested in</legend>
+
+                    <input
+                        type="checkbox"
+                        name="future projects"
+                        id="future projects"
+                        value="future projects"
+                    />
+                    <label for="Future Projects">Future Projects</label>
+
+                    <input
+                        type="checkbox"
+                        name="Email Updates"
+                        id="email Updates"
+                        value="email Updates"
+                    />
+                    <label for="Email Updates">Email Updates</label>
+                </fieldset>
+
+                <fieldset class="selection">
+                    <legend>Project</legend>
+
+                    <select name="project" id="project">
+                        Selet which project (if applicable)
+
+                        <option value="koala_site">Koala Site</option>
+                        <option value="pathname_website">
+                            Pathname Website
+                        </option>
+                        <option value="summit_site">Summit Site</option>
+                        <option value="skillset_form">Skillset Form</option>
+                        <option value="family_name">Family Name</option>
+                        <option value="Other">Other</option>
+                        <option value="n/a" selected="selected">N/A</option>
+                    </select>
+                </fieldset>
+
+                <fieldset class="message-area">
+                    <legend>Message</legend>
+                    <textarea
+                        name="message"
+                        id="message"
+                        rows="20"
+                        cols="60"
+                        placeholder="Enter your message here"
+                    ></textarea>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
