@@ -23,7 +23,7 @@
 
 <?php
 
-echo "<p class='colorRed'>This page was created by PHP on the server and sent back to your browser. </p>";
+echo "<p>This page was created by PHP on the server and sent back to your browser. </p>";
 
 //It will create a table and display one set of name value pairs per row
 	echo "<table border='1'>";
