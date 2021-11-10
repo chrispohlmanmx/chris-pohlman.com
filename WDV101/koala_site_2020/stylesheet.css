@@ -50,6 +50,7 @@ a:hover {
 a.return-link {
     color: blue;
 }
+
 img {
     width: 25%;
     height: 25%;
@@ -88,8 +89,39 @@ img {
     width: 100%;
 }
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px auto;
+    padding: 0;
+}
+@media (min-width: 769px) {
+    .column {
+        flex: 33.33%;
+    }
+}
+
+.flex-container img {
+    width: auto;
+    height: 90%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: none;
+}
+
 figure {
     border: 1px solid black;
     background: white;
-    padding: 10px;
+    padding: 0.5em;
+    margin: 0.5em auto;
+    width: 270px;
+    justify-content: center;
+}
+
+figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
 }
