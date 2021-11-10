@@ -87,3 +87,9 @@ img {
     border: none;
     width: 100%;
 }
+
+figure {
+    border: 1px solid black;
+    background: white;
+    padding: 10px;
+}
