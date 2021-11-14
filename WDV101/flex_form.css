@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    width: 80%;
+    margin: 1.5em auto;
+    padding: 1.5em;
+    background-color: hsl(195, 100%, 79%);
+    border-radius: 25px;
+}
+
+.container * {
+    box-sizing: border-box;
+}
+
+.flex-form {
+    width: 100%;
+    padding: 0.5em;
+}
+
+.flex-form div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.2em 0;
+}
+
+.flex-form > div > label {
+    flex: 1;
+    max-width: 120px;
+}
+
+.flex-form > div > input {
+    flex: 2;
+}
+
+.flex-form > div > select {
+    flex: 1;
+    max-width: 200px;
+}
+
+.radio-btns {
+    justify-content: space-around;
+}
+
+.message-box textarea {
+    flex: 1;
+    height: 200px;
+}
+
+.btn-group {
+    justify-content: center;
+}
+
+.btn {
+    max-width: 75px;
+    margin: 0.5em;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.24),
+        0 8px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-secondary {
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+.btn-secondary:hover {
+    color: red;
+}
