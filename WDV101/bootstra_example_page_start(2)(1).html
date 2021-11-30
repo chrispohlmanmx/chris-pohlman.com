@@ -1,92 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  
-  <!-- Get started by adding the necessary bootstrap components in the head section: the link to the stylesheet, the viewport meta.Then add the script code in the bottom just before the close of the body. (see www.getbootstrap.com). We will use our own css for styling--> 
-  
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8" />
 
-  
-<style>
+        <!-- Get started by adding the necessary bootstrap components in the head section: 
+    the link to the stylesheet, the viewport meta.Then add the script code in the bottom 
+    just before the close of the body. (see www.getbootstrap.com). We will use our own css for styling-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
 
-footer {
-			padding:0.5em;
-			}
-			
-/* Bootstrap's row styling has a negative margin value. This pushes the column outside the row boundries.The fix is to remove the margin values from the row. Undo the comments to activate the row class*/
-/*
-.row {
-		margin-left:0;
-		margin-right:0;
-		}
-		
-	*/
-/* This is how to center the image on the page.*/
-	
-.carousel img{
-     width: 100%;
-     height: auto;
-}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <style>
+            footer {
+                padding: 0.5em;
+            }
 
-</style>
-  
-</head>
-<body>
+            /* Bootstrap's row styling has a negative margin value. This pushes the column outside the row boundries.
+The fix is to remove the margin values from the row. Undo the comments to activate the row class*/
 
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
 
-	<header>
-		<h1>WDV101 Intro HTML and CSS</h1>
-		<h2>Unit-5 Bootstrap Framework</h2>
-		<p>The following are bootstrap buttons</p>
-		
-		<!-- add some bootstrap buttons-->
+            /* This is how to center the image on the page.*/
 
-	</header>
+            .carousel img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
 
-<!--Add a bootstrap navbar. Add the aporopriaqte bootstrap classes to each component. (w3schools) Then style using one of bootstraps colors. OR Copy and paste the code. Then enter your own hyperlinks and  text. You can use bootstraps color and background styling OR your own CSS.-->
+    <body>
+        <header>
+            <h1>WDV101 Intro HTML and CSS</h1>
+            <h2>Unit-5 Bootstrap Framework</h2>
+            <p>The following are bootstrap buttons</p>
 
+            <!-- add some bootstrap buttons-->
+        </header>
 
-<nav>
-	  <!-- Brand -->
-	  <a href="#">DMACC</a>
-		
-</nav>
-		
+        <!--Add a bootstrap navbar. Add the aporopriaqte bootstrap classes to each component. (w3schools)
+   Then style using one of bootstraps colors. OR Copy and paste the code. 
+   Then enter your own hyperlinks and  text. You can use bootstraps color and background styling OR your own CSS.-->
 
-		
-<!-- Add a div class of row-->
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="https://www.dmacc.edu/">DMACC</a>
 
-  <!-- Add a class of col to the divs. Bootstrap will automatically stack the columns when the viewport gets smaller. Then adjust the cols so that the middle col is larger than the other two. Style the text and background in each column using bootstrap background color to each column-->
-    <div>
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div>
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <!-->
-    <div>
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>-->
-</div><!--close the row div here-->
+            <!-- Toggler/collapsibe Button -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapsibleNavbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="bootstra_example_page_start(2)(1).html"
+                            >Home</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <!-- Add a div class of row-->
+            <div class="row">
+                <!-- Add a class of col to the divs. Bootstrap will automatically stack the 
+    columns when the viewport gets smaller. Then adjust the cols so that the middle col is 
+    larger than the other two. Style the text and background in each column using bootstrap 
+    background color to each column-->
+                <div class="col-sm-4 bg-primary text-light">
+                    <h3>Column 1</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit...
+                    </p>
+                    <p>
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris...
+                    </p>
+                </div>
+                <div class="col-sm-4 bg-secondary text-light">
+                    <h3>Column 2</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit...
+                    </p>
+                    <p>
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris...
+                    </p>
+                </div>
 
-<!-- add bootstrap classes to color the background and text of the footer.-->
+                <div class="col-sm-4 bg-info text-light">
+                    <h3>Column 3</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit...
+                    </p>
+                    <p>
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris...
+                    </p>
+                </div>
+            </div>
+            <!--close the row div here-->
+        </div>
+        <!-- add bootstrap classes to color the background and text of the footer.-->
 
-<footer>
-	<p>Footer content here.
-</footer>
+        <footer>
+            <p>Footer content here.</p>
+        </footer>
 
-<!--close the container div here-->
-
-<!--add the bootstrap jquery script here-->
-
-</body>
+        <!--add the bootstrap jquery script here-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
