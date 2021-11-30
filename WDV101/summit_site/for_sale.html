@@ -12,32 +12,30 @@
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous"
         />
-        <link
-            rel="stylesheet"
-            href="stylesheet.css"
-            type="text/css"
-            charset="utf-8"
-        />
         <title>Current Dogs for Sale</title>
+
+        <style type="text/css">
+            .banner {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            .card-img-top {
+                width: 100%;
+                height: 25vw;
+                object-fit: cover;
+            }
+        </style>
     </head>
 
     <body>
         <img
             src="images/summit_farms.jpg"
             alt="Banner image with alaskan dogs"
-            class="banner"
+            class="banner img-fluid"
         />
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <!-- Toggler/collapsibe Button -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
@@ -59,71 +57,106 @@
                 </li>
             </ul>
         </nav>
-
-        <h1>Available Dogs</h1>
-
-        <div class="info-block">
-            <h2>Tank</h2>
-            <img
-                src="images/tank.jpg"
-                class="info-pic"
-                alt="light gray alaskan malamute"
-            />
-            <ul class="dog-stats">
-                <li>Size: 84 Lb</li>
-                <li>Age: 4 years old</li>
-                <li>Color: light gray and white</li>
-            </ul>
-            <h3>About Me</h3>
-            <p>
-                Hi I'm Tank! I'm a friendly hard-working dog who loves to go on
-                long walks and enjoys carrying something while doing so! I'd
-                make a great hiking companion but won't be the most fun if you
-                prefer hanging out on the couch!
+        <div class="jumbotron px-2 py-2 bg-info text-dark">
+            <h1 class="page-header">Available Dogs</h1>
+            <p class="lead">
+                Summit Farms has a number of dogs available and the selection
+                changes regularly so be sure to check back often!
             </p>
         </div>
 
-        <div class="info-block">
-            <h2>Buddy</h2>
-            <img
-                src="images/buddy.jpg"
-                class="info-pic"
-                alt="black and white alaskan husky"
-                style="width: 18%"
-            />
-            <ul class="dog-stats">
-                <li>Size: 45 Lb</li>
-                <li>Age: 6 years old</li>
-                <li>Color: black with white face</li>
-            </ul>
-            <h3>About Me</h3>
-            <p>
-                Hi I'm Buddy! I'm an enthusiastic runner and I love to go for
-                extremely long and fast paced walks or runs with my owner! I
-                would make a great companion for an avid trail runner and need
-                lots of physical activity to feel my best!
-            </p>
-        </div>
+        <div class="container-fluid">
+            <div class="row" height="200px">
+                <div class="card col-lg-4">
+                    <img
+                        src="images/tank.jpg"
+                        class="card-img-top img-fluid"
+                        alt="light gray alaskan malamute"
+                    />
+                    <div class="card-body">
+                        <h2 class="card-title">Tank</h2>
+                        <ul class="list-group mb-1">
+                            <li class="list-group-item bg-secondary text-light">
+                                Size: 84 Lb
+                            </li>
+                            <li class="list-group-item bg-secondary text-light">
+                                Age: 4 years old
+                            </li>
+                            <li class="list-group-item bg-secondary text-light">
+                                Color: light gray and white
+                            </li>
+                        </ul>
+                        <h3 class="card-subtitle">About Me</h3>
+                        <p class="card-text">
+                            Hi I'm Tank! I'm a friendly hard-working dog who
+                            loves to go on long walks and enjoys carrying
+                            something while doing so! I'd make a great hiking
+                            companion but won't be the most fun if you prefer
+                            hanging out on the couch!
+                        </p>
+                    </div>
+                </div>
 
-        <div class="info-block">
-            <h2>Ralph</h2>
-            <img
-                src="images/ralph.jpg"
-                class="info-pic"
-                alt="black and white alaskan klee kai"
-            />
-            <ul class="dog-stats">
-                <li>Size: 18 Lb</li>
-                <li>Age: 3 years old</li>
-                <li>Color: black and white</li>
-            </ul>
-            <h3>About Me</h3>
-            <p>
-                Hi I'm Ralph! I'm a curious young dog that is extremely agile
-                and loves to jump! I'm well suited to agility training if my
-                owner is interested in training me but be careful I'm smart
-                enough to become a bit stubborn at times!
-            </p>
+                <div class="card col-lg-4">
+                    <img
+                        src="images/buddy.jpg"
+                        class="card-img-top img-fluid"
+                        alt="black and white alaskan husky"
+                    />
+                    <div class="card-body">
+                        <h2 class="card-title">Buddy</h2>
+                        <ul class="list-group mb-1">
+                            <li class="list-group-item bg-secondary text-light">
+                                Size: 45 Lb
+                            </li>
+                            <li class="list-group-item bg-secondary text-light">
+                                Age: 6 years old
+                            </li>
+                            <li class="list-group-item bg-secondary text-light">
+                                Color: black with white face
+                            </li>
+                        </ul>
+                        <h3 class="card-subtitle">About Me</h3>
+                        <p class="card-text">
+                            Hi I'm Buddy! I'm an enthusiastic runner and I love
+                            to go for extremely long and fast paced walks or
+                            runs with my owner! I would make a great companion
+                            for an avid trail runner and need lots of physical
+                            activity to feel my best!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card col-lg-4">
+                    <img
+                        src="images/ralph.jpg"
+                        class="card-img-top img-fluid"
+                        alt="black and white alaskan klee kai"
+                    />
+                    <div class="card-body">
+                        <h2 class="card-title">Ralph</h2>
+                        <ul class="list-group mb-1">
+                            <li class="list-group-item bg-secondary text-light">
+                                Size: 18 Lb
+                            </li>
+                            <li class="list-group-item bg-secondary text-light">
+                                Age: 3 years old
+                            </li>
+                            <li class="list-group-item bg-secondary text-light">
+                                Color: black and white
+                            </li>
+                        </ul>
+                        <h3 class="card-subtitle">About Me</h3>
+                        <p class="card-text">
+                            Hi I'm Ralph! I'm a curious young dog that is
+                            extremely agile and loves to jump! I'm well suited
+                            to agility training if my owner is interested in
+                            training me but be careful I'm smart enough to
+                            become a bit stubborn at times!
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
