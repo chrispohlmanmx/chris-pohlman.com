@@ -1,3 +1,6 @@
+body {
+    background-color: #fff5d2;
+}
 .banner {
     height: 330px;
     object-fit: cover;
@@ -6,20 +9,16 @@
 
 .location li {
     border: none;
+    background: none;
 }
 
 .hours li {
     border: none;
+    background: none;
 }
 
 form label {
     font-weight: bold;
-}
-
-footer,
-footer .container-fluid {
-    background-color: #593a1e;
-    color: #fff5d2;
 }
 
 footer .nav-link {
@@ -31,4 +30,8 @@ footer .nav-link {
 .card {
     background-color: #593a1e;
     color: #fff5d2;
+}
+
+.row {
+    margin: 1em;
 }
