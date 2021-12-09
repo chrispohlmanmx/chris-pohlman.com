@@ -16,7 +16,19 @@ form label {
     font-weight: bold;
 }
 
+footer,
+footer .container-fluid {
+    background-color: #593a1e;
+    color: #fff5d2;
+}
+
 footer .nav-link {
     margin: 0;
     padding: 0;
+    color: #00c9ac;
+}
+
+.card {
+    background-color: #593a1e;
+    color: #fff5d2;
 }
