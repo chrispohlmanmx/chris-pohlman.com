@@ -8,6 +8,15 @@
     border: none;
 }
 
+.hours li {
+    border: none;
+}
+
 form label {
     font-weight: bold;
+}
+
+footer .nav-link {
+    margin: 0;
+    padding: 0;
 }
