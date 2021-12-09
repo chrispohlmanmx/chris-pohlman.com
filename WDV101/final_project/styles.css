@@ -1,3 +1,13 @@
 .banner {
-    height: 300px;
+    height: 330px;
+    object-fit: cover;
+    margin-bottom: 2em;
+}
+
+.location li {
+    border: none;
+}
+
+form label {
+    font-weight: bold;
 }
