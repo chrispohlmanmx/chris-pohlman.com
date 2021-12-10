@@ -16,7 +16,18 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="styles.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <title>Savanna's Coffee House</title>
+
+        <style>
+            .carousel-inner > .carousel-item > img {
+                width: 100%;
+                max-height: 90vh;
+                object-fit: fill;
+            }
+        </style>
     </head>
 
     <body>
@@ -60,6 +71,53 @@
                 <h1 class="hero text-center">Savanna's Coffee House</h1>
             </div>
         </header>
+
+        <div class="container-fluid">
+            <div id="home" class="carousel slide" data-ride="carousel">
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!--https://pixabay.com/photos/coffee-coffee-cup-coffee-grinder-751619/-->
+                        <img
+                            src="images/old_school.jpg"
+                            alt="Old Fashioned coffee setup"
+                        />
+                    </div>
+                    <div class="carousel-item">
+                        <!--https://pixabay.com/photos/coffee-coffee-cup-coffee-grinder-751619/-->
+                        <img src="images/coffee_art.jpg" alt="Latte art" />
+                    </div>
+                    <div class="carousel-item">
+                        <!--https://pixabay.com/photos/woman-coffee-phone-portrait-lady-4246954/-->
+                        <img
+                            src="images/coffee_woman.jpg"
+                            alt="Woman drinking
+                        coffee"
+                        />
+                    </div>
+                    <div class="carousel-item">
+                        <!--https://pixabay.com/photos/coffee-cappuccino-coffee-pot-2133444/
+-->
+                        <img src="images/espresso.jpg" alt="Espresso machine" />
+                    </div>
+                    <div class="carousel-item">
+                        <!--https://pixabay.com/images/id-4746982/-->
+                        <img
+                            src="images/man_guitar.jpg"
+                            alt="Man with guitar"
+                        />
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#home" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#home" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
 
         <footer class="page-footer bg-dark text-muted font-small pt-4">
             <div class="container-fluid text-center">

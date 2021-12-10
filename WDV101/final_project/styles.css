@@ -30,8 +30,13 @@ footer .nav-link {
 .card {
     background-color: #593a1e;
     color: #fff5d2;
+    padding: 0;
 }
 
 .row {
     margin: 1em;
+}
+
+.dessert img {
+    max-height: 390px;
 }
