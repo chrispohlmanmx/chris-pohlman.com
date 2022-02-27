@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript Functions Unit 3</title>
+    </head>
+
+    <body>
+        <script>
+            function sayHello() {
+                alert("Hello from Chris Pohlman!");
+            }
+
+            function printHello() {
+                document.write("Chris Pohlman");
+            }
+
+            function characterCount() {
+                let testString = prompt(
+                    "Please enter a string",
+                    "Your string here"
+                );
+                alert(
+                    "There are " +
+                        testString.length +
+                        " characters in your string."
+                );
+            }
+        </script>
+
+        <h1>
+            This page was made by
+            <script>
+                printHello();
+            </script>
+        </h1>
+
+        <p>
+            <script>
+                sayHello();
+            </script>
+            This page uses a couple of functions to display alerts and give you
+            information such as my name,
+            <script>
+                printHello();
+            </script>
+        </p>
+
+        <button type="button" onclick="characterCount();">
+            Enter a Test String
+        </button>
+    </body>
+</html>
