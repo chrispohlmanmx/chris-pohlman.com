@@ -27,20 +27,59 @@ body {background-color:#FC6;
 <p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment.</p>
 <p>Submit this assignment on Blackboard. Please include a link to your homework page.</p>
 <hr />
-<p>1. Define a global  variable called inName. Assign it an initial value of &quot;&quot;. </p>
+<p>1. Define a global  variable called inName. Assign it an initial value of "". </p>
+	<script>var inName = "";</script>
 <p>2. Define a global variable called emailAddress and assign it the value of your DMACC email address.</p>
+	<script>var emailAddress = "cmpolhman@dmacc.edu";</script>
 <blockquote>
   <p><em><strong>NOTE</strong>: These variables should be available to any script on this page including within any functions since they have global scope.</em></p>
 </blockquote>
-<p>3. Create a function called getName( ). The function will use a prompt to ask the user to enter a name. Store the result in the inName variable. Create a button with an onclick event handler to activate this function.</p>
-<p>4. Create a function called displayName( ). The function will use alert( ) to display the value stored in the inName variable. Create a button with an onclick event handler to activate this function.</p>
-<p>5. Create a function called getEmail( ). The function will use a prompt( ) to ask the user to input an email address. Store the input in the global variable emailAddress. Create a button with an onclick event handler to activate this function.</p>
-<p>6. Create a function called  displayEmailName( ). The function will display the name portion of the email address stored in the yourEmailAddress variable. Create a button with an onclick event handler to activate this function. </p>
+<p>3. Create a function called getName( ). The function will use a prompt to ask the user to enter a name. 
+	Store the result in the inName variable. Create a button with an onclick event handler to activate this function.</p>
+	<script> 
+		function getName(){
+			inName = prompt("Enter your name", "Your Name");
+		}
+	</script>
+	<button type="button" onclick="getName();">Enter your Name</button>
+<p>4. Create a function called displayName( ). The function will use alert( ) to display the value stored in the inName variable.
+	 Create a button with an onclick event handler to activate this function.</p>
+	 <script>
+		 function displayName(){
+			 alert(inName);
+		 }
+	 </script>
+	 <button type="button" onclick="displayName();">Display Name</button>
+<p>5. Create a function called getEmail( ). The function will use a prompt( ) to ask the user to input an email address. 
+	Store the input in the global variable emailAddress. Create a button with an onclick event handler to activate this function.</p>
+	<script>
+		function getEmail(){
+			emailAddress = prompt("Please enter your email address", "email@email.com");
+		}
+	</script>
+	<button onclick="getEmail();" type="button">Enter Email</button>
+<p>6. Create a function called  displayEmailName( ). The function will display the name portion of the email address stored in the yourEmailAddress variable. 
+	Create a button with an onclick event handler to activate this function. </p>
+	<script type="text/javascript">
+		function displayEmailName(){
+			let atSign = emailAddress.indexOf("@");
+			alert(emailAddress.substring(0, atSign));
+		}
+	</script>
+	<button type="button" onclick="displayEmailName();">Display Email Name</button>
 <blockquote>
   <p><em><strong>For example</strong>: Assign emailAddress variable a value of &quot;aStudent@dmacc.edu&quot;. This function should return display &quot;aStudent&quot;.</em></p>
 </blockquote>
 <p>7. Create a function called displayEmailServer( ). The function will display the email server name after the @ symbol. Create a button with an onclick event handler to activate this function.</p>
 <blockquote>
+	<script type="text/javascript">
+		function displayEmailServer(){
+			let atSign = emailAddress.indexOf("@") + 1;
+			let end = emailAddress.length;
+			alert(emailAddress.substring(atSign,end));
+		}
+	</script>
+	<button type="button" onclick="displayEmailServer();">Display Email Server</button>
   <p><em><strong>For example</strong>: Given the same value for emailAddress variable. This function should display &quot;dmacc.edu&quot;. Do not include the @ symbol.</em></p>
 </blockquote>
 <p>&nbsp;</p>
