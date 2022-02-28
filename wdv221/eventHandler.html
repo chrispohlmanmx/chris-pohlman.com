@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Event Handler Assignment</title>
+    </head>
+
+    <body id="pageBody">
+        <h1 id="mainHeading">Welcome to the Event Handler assignment page</h1>
+
+        <ul>
+            <li>
+                <button type="button" onmouseover="displayName();">
+                    Display Page Creator
+                </button>
+            </li>
+            <li>
+                <button type="button" id="button2" onmouseout="writeToPage()">
+                    Click Me!
+                </button>
+            </li>
+            <li>
+                <button
+                    type="button"
+                    id="button3"
+                    onclick="changeBackgroundColor();"
+                >
+                    Click me to alter this page!
+                </button>
+            </li>
+            <li>
+                <label for="textbox">Type in me!</label>
+                <input
+                    type="text"
+                    id="textBox"
+                    name="textBox"
+                    value="textBox"
+                />
+            </li>
+            <li id="toBeFilled"></li>
+        </ul>
+
+        <script>
+            function displayName() {
+                alert("This page was made by Chris Pohlman");
+            }
+
+            function changeBackgroundColor() {
+                document.getElementById("pageBody").style.backgroundColor =
+                    "red";
+            }
+
+            function writeToPage() {
+                var pageElement = document.getElementById("toBeFilled");
+                pageElement.innerHTML =
+                    "<p>This was created with javascript!</p>";
+            }
+
+            function title() {
+                console.log("Main heading loaded");
+            }
+
+            document
+                .getElementById("mainHeading")
+                .addEventListener("load", title());
+
+            document.getElementById("textBox").onchange = console.log(
+                "Something was changed in the textbox"
+            );
+        </script>
+    </body>
+</html>
