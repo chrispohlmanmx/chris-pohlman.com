@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #myList {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<html>
+    <body>
+        <h1 id="Heading1">WDV221 Midterm Part 2</h1>
+
+        <h2>Directions:</h2>
+        <p>
+            1. Modify the code so the user can type in the text box and click
+            the "Add item to list" button to add what they typed to the myList
+            element.
+        </p>
+        <p>
+            2. Modify the code so the "Change List Color" button will change the
+            background color of the myList element.
+        </p>
+
+        <script></script>
+
+        <p>
+            Item:
+            <input type="text" value="" id="toAdd" />
+        </p>
+        <input
+            type="button"
+            value="Add item to list"
+            id="addtoList"
+            onclick="addtoList();"
+        />
+
+        <input
+            type="button"
+            value="Change List Color"
+            onclick="changeColor();"
+        />
+
+        <ol id="myList">
+            <li>item1</li>
+        </ol>
+
+        <p>
+            <script type="text/javascript">
+                function addtoList() {
+                    var toAdd = document.getElementById("toAdd").value;
+                    document.getElementById("myList").innerHTML +=
+                        "<li>" + toAdd + "</li>";
+                }
+
+                function changeColor() {
+                    document.getElementById("myList").style.backgroundColor =
+                        "lightcoral";
+                }
+            </script>
+        </p>
+    </body>
+</html>
