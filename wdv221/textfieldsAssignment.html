@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            WDV221 Intro Javascript - Operators and Textfields Assignment
+        </title>
+
+        <style>
+            body {
+                background-color: #c99;
+            }
+
+            .highlightTitle {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                font-style: italic;
+                font-size: 14px;
+                text-decoration: underline;
+                color: #096;
+            }
+        </style>
+
+        <script>
+            var count = 0;
+
+            function displayNum1() {
+                // exercise 1
+                //gets the value of the input in value1 and displays it after the display1 button is pressed
+                var value1 = document.getElementById("value1").value;
+                document.getElementById("display1").value = value1;
+            }
+            function displayNum2() {
+                //exercise 2
+                //gets the value of the input in value2 and displays it after the display2 button is pressed
+
+                var value2 = document.getElementById("value2").value;
+                document.getElementById("display2").value = value2;
+            }
+
+            function multiplyNums() {
+                //exercise 3
+                /* Gets the value from the first two inputs 
+              converts those to ints, multiplys them and then displays
+              them in the displayMultiply input */
+                var value1 = parseInt(document.getElementById("value1").value);
+                var value2 = parseInt(document.getElementById("value2").value);
+
+                var output = value1 * value2;
+                document.getElementById("displayMultiply").value = output;
+            }
+
+            function addNums() {
+                //exercise 4
+                /* Gets the value from the first two inputs 
+              converts those to ints, adds them and then displays
+              them in the displayAdd input */
+                var value1 = parseInt(document.getElementById("value1").value);
+                var value2 = parseInt(document.getElementById("value2").value);
+
+                var output = value1 + value2;
+                document.getElementById("displayAdd").value = output;
+            }
+
+            function incrementCount() {
+                //exercise 5
+                //adds 1 to count and displays it
+                count = count + 1;
+                document.getElementById("displayCount").value = count;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>WDV221 Intro Javascript</h2>
+        <h3>Project 3 - Operators and Textfields - Assignment</h3>
+        <hr />
+        <p>
+            Please complete the following exercises on this page. When complete
+            post this page to your server. Make a link in your WDV221 homework
+            page for this assignment.
+        </p>
+        <p>
+            Include a comment in each script with the exercise number and a
+            description of what the script is supposed to do.
+        </p>
+        <p>Using Blackboard submit this Assignment.</p>
+        <hr />
+        <h3>Instructions</h3>
+        <p>
+            Use the form fields for the input values. For each of the following
+            exercises create a function what will be activated by the button.
+        </p>
+        <form name="form1" method="post" action="">
+            <p>
+                Enter a number for value1:
+                <input type="text" id="value1" />
+            </p>
+            <p>
+                Enter a number for value 2:
+                <input type="text" id="value2" />
+            </p>
+            <p>
+                1.
+                <input
+                    type="button"
+                    value="Display value1"
+                    onclick="displayNum1()"
+                />
+                Display the value you entered for value1:
+                <input type="text" id="display1" name="display1" />
+            </p>
+            <p>
+                2.
+                <input
+                    type="button"
+                    value="Display value2"
+                    onclick="displayNum2()"
+                />
+                Dislplay the value you entered for value2:
+                <input type="text" id="display2" />
+            </p>
+            <p>
+                3.
+                <input
+                    type="button"
+                    value="Multiply"
+                    onclick="multiplyNums()"
+                />
+                Display the value of value1 * value2:
+                <input type="text" id="displayMultiply" />
+            </p>
+            <p>
+                4.
+                <input type="button" value="Add" onclick="addNums()" />
+                Display the results of value1 + value2 in the following
+                textfield.
+                <input type="text" id="displayAdd" />
+            </p>
+            <p>
+                5.
+                <input
+                    type="button"
+                    value="Increment count"
+                    onclick="incrementCount()"
+                />
+                Use the increment operator to add 1 to count and display the new
+                value of count.
+                <input type="text" id="displayCount" />
+            </p>
+            <p>
+                <input type="reset" name="Reset" id="button" value="Reset" />
+            </p>
+        </form>
+        <p>&nbsp;</p>
+    </body>
+</html>
