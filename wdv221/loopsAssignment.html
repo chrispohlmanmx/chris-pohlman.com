@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WDV221 Intro Javascript - Loops</title>
+    </head>
+
+    <body>
+        <h1>WDV221 Intro Javascript</h1>
+        <h2>Project-5 Loops Assignment</h2>
+        <hr />
+        <p>
+            Please complete the following exercises on this page. When complete
+            post this page to your server. Make a link in your WDV221 homework
+            page for this assignment.
+        </p>
+        <p>
+            Include a comment in each script with the exercise number and a
+            description of what the script is supposed to do.
+        </p>
+        <p>Using Blackboard submit this Assignment.</p>
+        <hr />
+        <h3>Instructions:</h3>
+        <p>
+            Please complete the following exercises using Javascript loops as
+            indicated. Please place your code on this page. Use runtime scripts
+            unless told otherwise.
+        </p>
+        <p>
+            1. Create a WHILE loop that will print out the numbers 0 to 4 each
+            on a seperate line.
+        </p>
+        <script>
+            // Create a WHILE loop that will print out the numbers 0 to 4 on a seperate line
+            var x = 0;
+            while (x < 5) {
+                document.write(x);
+                document.write("<br>");
+                x++;
+            }
+        </script>
+        <p>
+            2. Create a FOR loop that will print out the numbers 4 to 0 each on
+            a seperate line.
+        </br>
+            <script>
+                //Create a FOR loop that will print out the numbers 4 to 0 each on a seperate line.
+                for (var i = 4; i >= 0; i--) {
+                    document.write(i);
+                    document.write("<br>");
+                }
+            </script>
+        </p>
+        <p>
+            3. Create a loop that will print 1 to 5 each in its own paragraph
+            element.
+            <script>
+                //loop that prints 1 to 5 each in its own paragraph element
+                for (var i = 1; i < 6; i++) {
+                    document.write("<p>" + i + "</p>");
+                }
+            </script>
+        </p>
+        <p>
+            4. Create a loop that will print out the following numbers
+            (5,10,15,20,25...) until one is greater than 40.
+        </br>
+            <script>
+                for (i = 5; i < 40; i += 5) {
+                    document.write(i);
+                    document.write("<br>");
+                }
+            </script>
+        </p>
+        <p>
+            5. Create a loop that will print out 6 of the following messages
+            (Option 1, Option 2, Option 3, etc. ) as options within the drop
+            down menu below.
+        </p>
+        <p>
+            
+            <label
+                >Select an Option!
+                <select name="select" id="select"></select>
+            </label>
+            <script type="text/javascript">
+                for(var i = 1; i < 7; i++){
+                   var select = document.getElementById("select");
+                   var option = document.createElement("option");
+                   option.value = "Option " + i;
+                   option.innerHTML = "Option " + i;
+                   select.appendChild(option);
+                }
+            </script>
+        </p>
+        <p>&nbsp;</p>
+    </body>
+</html>
