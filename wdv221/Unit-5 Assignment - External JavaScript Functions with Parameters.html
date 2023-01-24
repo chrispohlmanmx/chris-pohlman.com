@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WDV2221 Intro Javascript</title>
+</meta>
+<script src="currencyFormatFunctions.js" type="text/javascript"></script>
+<script src="dateFunctions.js" type="text/javascript"></script>
+<script src="stringMask.js" type="text/javascript"></script>
+<script>
+	var totalSales = 4375.6;
+</script>
+
+</head>
+
+<style>
+body {background-color:#eeddda;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+</style>
+<body>
+<h1>WDV2221 Intro Javascript</h1>
+<h2>Unit-5 Assignment - External JavaScript Functions with Parameters</h2>
+<h3>Directions:</h3>
+
+<p>Problem 1</p>
+<p>a. Create a global variable called totalSales. Assign it a value of 4375.6. It should be numeric data type.</p>
+<p>b. Attach the currencyFormatFunctions.js as an external JavaScript file and use one of the currency formatting functions to display totalSales formatted as currency in the following line. Call the functions as part of the runtime.</p>
+<h3>Your Total Sales:
+	<script>
+		totalSales = currency(totalSales)
+		document.write(totalSales)
+	</script>
+</h3>
+<p>Problem 2</p>
+<p>a. Attach the dateFunctions.js as an external JavaScript file. Use the provided date functions and concatenation to display today's date in the following format <strong>Monday, January 2, 2018</strong>. Call the function as part of the runtime.</p>
+<p>Today's date:
+	<script>
+		var dayOfWeek = getCurrentDayOfWeek()
+		var month = getCurrentMonthName()
+		var date = getCurrentDate()
+		var year = getCurrentYear()
+		document.write(`${dayOfWeek}, ${month} ${date}, ${year}`)
+	</script>
+</p>
+<p>Problem 3</p>
+<p>a. Attach the dateFunctions.js as an external JavaScript file. Use the provided date functions and concatenation to display today's date in the following format&nbsp; <strong>2, January 2018</strong>.</p>
+<p>b. Call the function using a button and the onclick event handler.</p>
+<p>Today's date:
+	<script>
+		document.write(`${date}, ${month} ${year}`)
+
+	</script>
+</p>
+<p>&nbsp;</p>
+<p>Problem 4</p>
+<p>a. Attach the stringMask.js as an external JavaScript file.</p>
+<p>b. Write a function to get the value out of the textToMask text box, use the provided maskValue function to display the masked results back in the same text box.</p>
+<form>
+	<input type="text" id="textToMask"/>
+	<input type="button" value="Mask" onclick="getValueAndDisplay()" />
+</form>
+<p><br /></p>
+<script>
+	function getValueAndDisplay(){
+		const textInput = document.getElementById("textToMask")
+		textInput.value = maskValue(textInput.value)
+	}
+</script>
+
+</body>
+</html>
