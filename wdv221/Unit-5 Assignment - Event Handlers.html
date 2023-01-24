@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Unit-5 Assignment Event Handlers</title>
+        <link rel="stylesheet" href="unit5.css" />
+    </head>
+    <body>
+        <h1>Unit-5 Assignment Event Handlers</h1>
+        <main id="grid-container" class="container">
+            <div id="event1">
+                Ex elit veniam sint incididunt sint commodo amet occaecat sit
+                consequat sit. Eu minim aute Lorem veniam incididunt consectetur
+                laborum fugiat tempor laborum ad voluptate commodo. Deserunt
+                dolore consectetur laborum veniam irure sint. Quis ipsum aute do
+                sunt. Veniam nulla do aliqua ea. Nisi pariatur et sit ea aute
+                incididunt do dolore ut fugiat do ex do.
+                <button id="onclickEvent" onclick="makeBorder()">Give me a border</button>
+            </div>
+            <div id="event2">
+                Aliqua esse cupidatat nisi excepteur. Sunt sit labore non labore
+                ipsum dolore sint. Aliquip incididunt sit magna cupidatat sunt
+                enim.
+                <p>Mouse over this div to make it bigger!</p>
+            </div>
+            <div id="event3">
+                Cillum aliquip est irure velit nulla commodo labore occaecat.
+                Anim occaecat occaecat ut ea magna in velit est proident
+                reprehenderit. Elit veniam qui dolore officia eu deserunt sunt.
+                <form>
+                    <label for="onChangeInput">Typing here will emphasize this div</label>
+                    <input type="text" id="onChangeInput" name="onChangeInput"></input>
+                </form>
+            </div>
+        </main>
+    </body>
+
+    <script>
+        const onClickDiv = document.getElementById("event1")
+        const onMouseOverDiv = document.getElementById("event2")
+        const onChangeDiv = document.getElementById("event3")
+        const onChangeInput = document.getElementById("onChangeInput")
+
+        function makeBorder(){
+            onClickDiv.style.border = "1px solid black"
+            onClickDiv.style.padding = "2em"
+        }
+
+        function increaseFontSize(){
+            onMouseOverDiv.style.fontSize = "x-large"
+        }
+
+        function decreaseFontSize(){
+            onMouseOverDiv.style.fontSize = "1em"
+        }
+
+        function emphasizeFont(){
+            onChangeDiv.style.fontWeight = "bold";
+        }
+
+        function writeLog(){
+            const mainElement = document.getElementById("grid-container")
+            const logDiv = document.createElement("div")
+            logDiv.innerText = "The page fully loaded"
+            mainElement.appendChild(logDiv)
+        }
+
+        onMouseOverDiv.addEventListener("mouseover", increaseFontSize)
+        onMouseOverDiv.addEventListener("mouseout", decreaseFontSize)
+        onChangeInput.addEventListener("change", emphasizeFont)
+        window.addEventListener("load", writeLog)
+
+    </script>
+
+</html>

@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    column-gap: 1em;
+    row-gap: 4rem;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+label {
+    margin: 2em;
+}
