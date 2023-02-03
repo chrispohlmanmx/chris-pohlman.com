@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>WDV221</h1>
+        <div>
+            <script>
+                var item = "Milk";
+                var count = 1;
+                function displayItemCount(item, count) {
+                    document.write(`<p>"${item}": ${count}</p>`);
+                }
+                displayItemCount(item, count);
+
+                function formatTeamAndScore(teamName, score) {
+                    return `${teamName}: ${score}`;
+                }
+
+                function formatForList(value) {
+                    return `<li>${value}</li>`;
+                }
+
+                function ageToDogYears(age) {
+                    return age * 7;
+                }
+
+                document.write(`<p>${formatTeamAndScore("Chiefs", 27)}</p>`);
+                document.write(`<ul>${formatForList("Winner")}</ul>`);
+                document.write(
+                    `<p>I am ${ageToDogYears(29)} years old in dog years.</p>`
+                );
+            </script>
+        </div>
+    </body>
+</html>
