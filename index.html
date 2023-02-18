@@ -2,71 +2,61 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <script src="https://cdn.tailwindcss.com">
-            tailwind.config = {
-                theme: {
-                    colors: {
-                        'orange': '#FF886A',
-                        'pink': '#F17090',
-                        'magenta': '#C46BB2',
-                        'purple': '#7E70C1',
-                        'blue': '#0072B6',
-                        'cyan': '#006B94'
-                    },
-                    extend: {},
-                },
-                plugins: [],
-            }
-        </script>
-        <!-- <link
+        <link rel="stylesheet" href="reset.css" />
+        <link
             rel="stylesheet"
             href="stylesheet.css"
             type="text/css"
             charset="utf-8"
-        /> -->
+        />
         <title>Home Page</title>
     </head>
 
-    <body class="bg-cyan-200">
-        <header>
-            <nav>
-                <a href="./index.html">Home</a>
-                <a href="./DMACC.html">DMACC</a>
-            </nav>
-        </header>
-        <h1>Chris Pohlman</h1>
-        <h2>Welcome to my Website!</h2>
-
-        <p>
-            This website will contain links to my completed assignments in
-            WDV101 and possibly more in the future.
-        </p>
-
-        <div class="container grid-cols-3">
-            <ul>
-                <li class="">
-                    <img
-                        src="images/unnamed.jpg"
-                        alt="profile picture"
-                        class="object-contain"
-                    />
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <a href="./index.html">Home</a>
+                    <a href="./DMACC.html">DMACC</a>
                     <a href="about_me.html">About Me</a>
-                </li>
-
-                <li class="index-link">
-                    <a href="contact.html">Contact Me</a>
-                </li>
-                <li class="index-link">
-                    <a href="https://chimerical-rolypoly-ebe7d4.netlify.app/"
+                    <a href="https://github.com/chrispohlmanmx">GitHub</a>
+                </nav>
+                <h1>Chris Pohlman</h1>
+            </header>
+            <div class="projects">
+                <h2 class="projects-header">Projects</h2>
+                <div class="project-card">
+                    <a
+                        class="project-link"
+                        href="https://chimerical-rolypoly-ebe7d4.netlify.app/"
                         >Roll for Sandwich</a
                     >
-                </li>
-                <li class="index-link">
+                    <p>
+                        A Website built using react+vite that allows a user to
+                        generate a random sandwich from either preset
+                        ingredients, or user given ingredients. Deployed using
+                        Netlify.
+                        <a
+                            href="https://github.com/chrispohlmanmx/rollForSandwich"
+                            >GitHub Link</a
+                        >
+                    </p>
+                </div>
+                <div class="project-card">
                     <a href="https://portfolios.talentsprint.com/gamewise/index"
                         >TechWise Idle Game</a
                     >
-                </li>
-            </ul>
+                    <p>
+                        An idle game built using the MERN stack, uses MUI
+                        components to create a modern feeling UI. Hosted by
+                        Talentsprint and built as part of a team project for
+                        TechWise.
+                        <a href="https://gitlab.com/chasevanblair/gamewise"
+                            >GitLab Link</a
+                        >
+                    </p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
