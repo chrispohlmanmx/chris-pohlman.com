@@ -2,13 +2,19 @@
     font-family: "MyWebFont";
     src: url("fonts/WebFont.woff") format("woff");
 }
-@tailwind base;
+
+/*TODO breakpoints, improve color scheme */
 
 * {
     box-sizing: border-box;
     background-color: #242424;
     font-family: MyWebFont, Helvetica, Arial, sans-serif;
     color: #ffffffde;
+}
+
+a:link {
+    text-decoration: none;
+    color: #aca9bb;
 }
 
 a:hover {
@@ -39,10 +45,14 @@ nav a:visited {
     padding: 2em;
     border: 1px solid #faf8ff;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 header {
     grid-column: 1 / span 3;
+    margin-top: 1em;
 }
 
 .projects {
@@ -98,14 +108,6 @@ nav ul {
     float: left;
     margin: 0;
     padding: 0;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-a:hover {
-    color: red;
 }
 
 #form-container {
