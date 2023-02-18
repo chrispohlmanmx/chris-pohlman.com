@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            WDV221 Intro Javascript - Operators and Textfields Assignment
+        </title>
+
+        <style>
+            body {
+                background-color: #d5c2c2;
+            }
+
+            .highlightTitle {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                font-style: italic;
+                font-size: 14px;
+                text-decoration: underline;
+                color: #096;
+            }
+        </style>
+
+        <script>
+            var count = 0;
+        </script>
+    </head>
+
+    <body>
+        <h2>WDV221 Intro Javascript</h2>
+        <h3>Unit-6 Operators and Textfields - Assignment</h3>
+        <hr />
+        <p>
+            Please complete the following exercises on this page. When complete
+            post this page to your server. Make a link in your WDV221 homework
+            page for this assignment.
+        </p>
+        <p>
+            Include a comment in each script with the exercise number and a
+            description of what the script is supposed to do.
+        </p>
+        <p>Using Blackboard submit this Assignment.</p>
+        <hr />
+        <h3>Instructions</h3>
+        <p>
+            Use the form fields for the input values. For each of the following
+            exercises create a function what will be activated by the button. Do
+            not forget our discussion on button types.
+        </p>
+        <form id="form1" name="form1" method="post" action="">
+            <p>
+                Enter a number for value1:
+                <input type="text" id="value1" />
+            </p>
+            <p>
+                Enter a number for value 2:
+                <input type="text" id="value2" />
+            </p>
+            <p>
+                1.
+                <input
+                    type="button"
+                    value="Display value1"
+                    onclick="displayValue1()"
+                />
+                Display the value you entered for value1:
+                <input type="text" id="display1" />
+            </p>
+            <p>
+                2.
+                <input
+                    type="button"
+                    value="Display value2"
+                    onclick="displayValue2()"
+                />
+                Dislplay the value you entered for value2:
+                <input type="text" id="display2" />
+            </p>
+            <p>
+                3.
+                <input
+                    type="button"
+                    value="Multiply"
+                    onclick="display1Times2()"
+                />
+                Display the value of value1 * value2:
+                <input type="text" id="multiply" />
+            </p>
+            <p>
+                4.
+                <input type="button" value="Add" onclick="display1Plus2()" />
+                Display the results of value1 + value2 in the following
+                textfield.
+                <input type="text" id="add" />
+            </p>
+            <p>
+                5.
+                <input
+                    type="button"
+                    value="Increment count"
+                    onclick="incrementCount()"
+                />
+                Use the increment operator to add 1 to count and display the new
+                value of count.
+                <input type="text" id="increment" />
+            </p>
+            <p>
+                <input
+                    type="reset"
+                    name="Reset"
+                    id="button"
+                    value="Reset"
+                    onclick="reset()"
+                />
+            </p>
+        </form>
+        <p>&nbsp;</p>
+    </body>
+
+    <script>
+        const value1input = document.getElementById("value1");
+        const value2input = document.getElementById("value2");
+        var count = 0;
+        const countInput = document.getElementById("increment");
+        countInput.value = count;
+
+        function displayValue1() {
+            const displayInput1 = document.getElementById("display1");
+            displayInput1.value = value1input.value;
+        }
+
+        function displayValue2() {
+            const displayInput2 = document.getElementById("display2");
+            displayInput2.value = value2input.value;
+        }
+
+        function display1Times2() {
+            const mutliplyDisplay = document.getElementById("multiply");
+            mutliplyDisplay.value =
+                parseInt(value1input.value) * parseInt(value2input.value);
+        }
+
+        function display1Plus2() {
+            const mutliplyDisplay = document.getElementById("add");
+            mutliplyDisplay.value =
+                parseInt(value1input.value) + parseInt(value2input.value);
+        }
+
+        function incrementCount() {
+            count++;
+            countInput.value = count;
+        }
+
+        function reset() {
+            document.getElementById("form1").reset();
+        }
+    </script>
+</html>
