@@ -2,6 +2,7 @@
     font-family: "MyWebFont";
     src: url("fonts/WebFont.woff") format("woff");
 }
+@tailwind base;
 
 * {
     box-sizing: border-box;

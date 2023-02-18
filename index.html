@@ -2,16 +2,38 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link
+        <script src="https://cdn.tailwindcss.com">
+            tailwind.config = {
+                theme: {
+                    colors: {
+                        'orange': '#FF886A',
+                        'pink': '#F17090',
+                        'magenta': '#C46BB2',
+                        'purple': '#7E70C1',
+                        'blue': '#0072B6',
+                        'cyan': '#006B94'
+                    },
+                    extend: {},
+                },
+                plugins: [],
+            }
+        </script>
+        <!-- <link
             rel="stylesheet"
             href="stylesheet.css"
             type="text/css"
             charset="utf-8"
-        />
+        /> -->
         <title>Home Page</title>
     </head>
 
-    <body>
+    <body class="bg-cyan-200">
+        <header>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./DMACC.html">DMACC</a>
+            </nav>
+        </header>
         <h1>Chris Pohlman</h1>
         <h2>Welcome to my Website!</h2>
 
@@ -20,41 +42,31 @@
             WDV101 and possibly more in the future.
         </p>
 
-        <p>
-            <ul >
-                <li class="index-link">
-                    <a href="WDV101/homework.html">WDV101 Homework</a>
+        <div class="container grid-cols-3">
+            <ul>
+                <li class="">
                     <img
-                        src="images/homework_folder.png"
-                        alt="image of red folder"
-                        class="link-img"
+                        src="images/unnamed.jpg"
+                        alt="profile picture"
+                        class="object-contain"
                     />
-                </li>
-
-                <li class="index-link">
-                    <a href="wdv221/wdv221Homework.html">WDV221 Homework</a>
-                    <img
-                        src="images/homework_folder.png"
-                        alt="image of red folder"
-                        class="link-img"
-                    />
-                </li>
-
-                <li class="index-link">
                     <a href="about_me.html">About Me</a>
-                    <img src="images/unnamed.jpg" alt="profile picture" class="link-img">
                 </li>
 
                 <li class="index-link">
                     <a href="contact.html">Contact Me</a>
                 </li>
                 <li class="index-link">
-                    <a href="https://chimerical-rolypoly-ebe7d4.netlify.app/">Roll for Sandwich</a>
+                    <a href="https://chimerical-rolypoly-ebe7d4.netlify.app/"
+                        >Roll for Sandwich</a
+                    >
                 </li>
                 <li class="index-link">
-                    <a href="https://portfolios.talentsprint.com/gamewise/index">TechWise Idle Game</a>
+                    <a href="https://portfolios.talentsprint.com/gamewise/index"
+                        >TechWise Idle Game</a
+                    >
                 </li>
             </ul>
-        </p>
+        </div>
     </body>
 </html>
