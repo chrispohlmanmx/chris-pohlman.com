@@ -1,45 +1,68 @@
 <!DOCTYPE html>
 <head>
-
-<style>
-	
-	#myList { background-color: lightblue;}
-	
-</style>
-
-
+    <style>
+        #myList {
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <html>
-<body>
+    <body>
+        <h1 id="Heading1">WDV221 Midterm Part 2</h1>
 
-<h1 id="Heading1">WDV221 Midterm Part 2</h1>
+        <h2>Directions:</h2>
+        <p>
+            1. Modify the code so the user can type in the text box and click
+            the "Add item to list" button to add what they typed to the myList
+            element.
+        </p>
+        <p>
+            2. Modify the code so the "Change List Color" button will change the
+            background color of the myList element.
+        </p>
 
-<h2>Directions:</h2>
-<p>  1. Modify the code so the user can type in the text box and click the "Add item to list" button to add what they typed to the myList element. 
-</p>
-<p>  2. Modify the code so the "Change List Color" button will change the background color of the myList element. 
-</p>
+        <script></script>
 
-<script>
+        <p>
+            Item:
+            <input type="text" value="" id="user-input" />
+        </p>
+        <input type="button" value="Add item to list" onclick="addItem()" />
 
-	
-</script>
+        <input
+            type="button"
+            value="Change List Color"
+            onclick="changeListColor()"
+        />
 
+        <ol id="myList">
+            <li>item1</li>
+        </ol>
 
+        <p></p>
+    </body>
 
-<p>Item:
-<input type="text" value=""/>
-</p>
-<input type="button" value="Add item to list" />
+    <script>
+        const listToAddTo = document.getElementById("myList");
+        function addItem() {
+            const newItem = document.getElementById("user-input").value;
 
-<input type="button" value="Change List Color" />
+            const newListItem = document.createElement("li");
+            newListItem.innerHTML = newItem;
 
-<ol id="myList">	
-	<li>item1</li>
-</ol>
+            listToAddTo.appendChild(newListItem);
+        }
 
-<p>
+        function getRandomColor() {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
 
+            return `rgb(${r},${g},${b})`;
+        }
 
-</body>
+        function changeListColor() {
+            listToAddTo.style.backgroundColor = getRandomColor();
+        }
+    </script>
 </html>
