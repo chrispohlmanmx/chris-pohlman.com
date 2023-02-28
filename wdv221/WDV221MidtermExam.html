@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WDV221 Intro Javascript</title>
+        <script src="../scripts/dollarFormatLibrary.js"></script>
+        <script src="../scripts/dateFunctions.js"></script>
+    </head>
+
+    <body>
+        <h1>WDV221 Intro Javascript</h1>
+        <h2>Midterm Exam</h2>
+        <h3>Instructions:</h3>
+        <p>1. Create a global variable called inputFirstName.</p>
+        <p>2. Create a global variable called inputLastName.</p>
+        <p>3. Create a global variable called formattedName.</p>
+        <p>
+            4. Create a function called createPipeFormat that will take 2
+            parameters, concatenate them together with a '|' between them, and
+            return the result.
+        </p>
+        <ul>
+            <li>
+                For example createPipeFormat("First", "Last") would return the
+                string "First|Last"
+            </li>
+        </ul>
+
+        <p>
+            5. Create a function called loadName( ). The function will do the
+            following:
+        </p>
+        <ul>
+            <li>Use a prompt to ask the user to enter a first name.</li>
+            <li>Store the value in the inputFirstName variable.</li>
+            <li>Use a prompt to ask the user to enter a last name.</li>
+            <li>Store the value in the inputLastName variable.</li>
+            <li>
+                Call createPipeFormat and store the result in the formattedName
+                variable.
+            </li>
+            <li>
+                Add an event handler to the button below that will run the
+                loadName( ) function.
+            </li>
+        </ul>
+        <p>
+            <input
+                type="button"
+                name="button2"
+                id="button2"
+                value="Load a name"
+                onclick="loadName()"
+            />
+        </p>
+
+        <p>
+            6. Create a function called displayFormattedName( ). The function
+            will do the following:
+        </p>
+        <ul>
+            <li>It will accept one input parameter</li>
+            <li>
+                The function will display the value of the parameter in an alert
+                with an appropriate message.
+            </li>
+            <li>
+                Add an event handler to the button below that will call the
+                displayFormattedName( ). It will pass the formattedName variable
+                as a parameter into the displayFormattedName( ).
+            </li>
+        </ul>
+        <p>
+            <input
+                type="button"
+                name="button4"
+                id="button4"
+                value="Display Formatted Name"
+                onclick="displayFormattedName(formattedName)"
+            />
+        </p>
+        <p>
+            7. Create a function called characterCount( ) and modify the code so
+            the following button will display the number of characters in the
+            formattedName variable.
+        </p>
+        <p>
+            <input
+                type="button"
+                name="button5"
+                id="button5"
+                value="Characters in Formatted Name"
+                onclick="characterCount(formattedName)"
+            />
+        </p>
+        <p>
+            8. Create a function called uppercaseName( ) and modify the code so
+            the following button will display the formattedName variable in all
+            uppercase letters in the paragraph below the button
+        </p>
+        <p>
+            <input
+                type="button"
+                name="button6"
+                id="button6"
+                value="Uppercase Formatted Name"
+                onclick="uppercaseName(formattedName)"
+            />
+        </p>
+
+        <p id="uppercaseFormattedDisplay"></p>
+
+        <p>
+            9. Link in the external Javascript files provided to do the
+            following:
+            <strong
+                >Points will be deducted if the external javascript files are
+                not used.</strong
+            >
+        </p>
+        <ul>
+            <li>
+                Display the following amount formatted as currency. 234721.4.
+            </li>
+            <li>
+                Display today's date at the bottom of the page in the format of
+                "Wednesday January 1, 2020".
+            </li>
+            <li id="currency"></li>
+        </ul>
+        <footer id="date"></footer>
+    </body>
+
+    <script>
+        var inputFirstName;
+        var inputLastName;
+        var formattedName;
+
+        function createPipeFormat(first, last) {
+            return `${first} | ${last}`;
+        }
+
+        function loadName() {
+            inputFirstName = prompt("Enter a first name.");
+            inputLastName = prompt("Enter a last name.");
+
+            formattedName = createPipeFormat(inputFirstName, inputLastName);
+        }
+
+        function displayFormattedName(name) {
+            alert(`The formatted name is ${name}`);
+        }
+
+        function characterCount(name) {
+            alert(`There are ${name.length} characters in ${name}`);
+        }
+
+        function uppercaseName(name) {
+            name = name.toUpperCase();
+            const displayP = document.getElementById(
+                "uppercaseFormattedDisplay"
+            );
+            displayP.innerHTML = `The name you entered in all caps: ${name}`;
+        }
+
+        const numberDisplay = document.getElementById("currency");
+        console.log(numberDisplay);
+        numberDisplay.innerHTML = dollarFormat(234721.4);
+
+        const dateDisplay = document.getElementById("date");
+
+        const todayDate = `${getCurrentDayOfWeek()} ${getCurrentMonthName()} ${getCurrentDate()}, ${getCurrentYear()}  `;
+
+        dateDisplay.innerHTML = todayDate;
+    </script>
+</html>
