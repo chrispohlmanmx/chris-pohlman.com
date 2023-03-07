@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WDV221 Intro Javascript - Loops</title>
+    </head>
+
+    <body>
+        <h1>WDV221 Intro Javascript</h1>
+        <h2>Unit-8 Loops Assignment</h2>
+        <hr />
+        <p>
+            Please complete the following exercises on this page. When complete
+            post this page to your server. Make a link in your WDV221 homework
+            page for this assignment.
+        </p>
+        <p>
+            Include a comment in each script with the exercise number and a
+            description of what the script is supposed to do.
+        </p>
+        <p>Using Blackboard submit this Assignment.</p>
+        <hr />
+        <h3>Instructions:</h3>
+        <p>
+            Please complete the following exercises using JavaScript loops as
+            indicated. Please place your code on this page. Use runtime scripts
+            unless told otherwise.
+        </p>
+        <p>
+            1. Create a WHILE loop that will print out the numbers 0 to 4 each
+            on a seperate line.
+        </p>
+        <div id="1"></div>
+        <p>
+            2. Create a FOR loop that will print out the numbers 4 to 0 each on
+            a seperate line.
+        </p>
+        <div id="2"></div>
+        <p>
+            3. Create a loop that will print 1 to 5 each in its own paragraph
+            element.
+        </p>
+        <div id="3"></div>
+        <p>
+            4. Create a loop that will print out the following numbers
+            (5,10,15,20,25...) until one is greater than 40.
+        </p>
+        <div id="4"></div>
+        <p>
+            5. Create a loop that will print out 6 of the following messages
+            (Option 1, Option 2, Option 3, etc. ) as options within the drop
+            down menu below.
+        </p>
+        <p>
+            <label
+                >Select an Option!
+                <select name="select" id="select"></select>
+            </label>
+        </p>
+        <p>&nbsp;</p>
+    </body>
+
+    <script>
+        const div1 = document.getElementById("1");
+        const div2 = document.getElementById("2");
+        const div3 = document.getElementById("3");
+        const div4 = document.getElementById("4");
+        let i = 0;
+        while (i < 5) {
+            let divtag = document.createElement("div");
+            divtag.innerHTML = i;
+            i++;
+            div1.appendChild(divtag);
+        }
+
+        for (let i = 0; i < 5; i++) {
+            let divtag = document.createElement("div");
+            divtag.innerHTML = i;
+            div2.appendChild(divtag);
+        }
+        for (let i = 0; i < 5; i++) {
+            let ptag = document.createElement("p");
+            ptag.innerHTML = i;
+            div3.appendChild(ptag);
+        }
+        let num = 5;
+        while (num < 40) {
+            let divtag = document.createElement("div");
+            divtag.innerHTML = num;
+            div4.appendChild(divtag);
+            num += 5;
+        }
+
+        const dropdown = document.getElementById("select");
+        for (let i = 1; i <= 6; i++) {
+            const option = document.createElement("option");
+            option.value = `Option ${i}`;
+            option.innerHTML = `Option ${i}`;
+            dropdown.appendChild(option);
+        }
+    </script>
+</html>
