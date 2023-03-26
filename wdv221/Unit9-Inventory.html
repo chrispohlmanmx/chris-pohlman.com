@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Unit-9 Parallel Array Inventory</title>
+    </head>
+    <body>
+        <h1>Inventory Search</h1>
+
+        <main>
+            <div>
+                <label for="inventorySearch" name="inventory search"
+                    >Search Inventory</label
+                >
+                <input id="inventorySearch" type="text" placeholder="search" />
+                <button onclick="searchInventory()">Search</button>
+                <button onclick="clearResults()">Clear Search Results</button>
+            </div>
+            <div>
+                <h2>Search Results</h2>
+                <div id="searchResults"></div>
+            </div>
+        </main>
+    </body>
+
+    <script>
+        const products = ["pen", "paper", "pencil"];
+        var inventory = [0];
+
+        const resultDiv = document.getElementById("searchResults");
+
+        function clearResults() {
+            while (resultDiv.hasChildNodes()) {
+                resultDiv.removeChild(resultDiv.firstChild);
+            }
+        }
+
+        function searchInventory() {
+            function adjustStock() {
+                const adjustBy = Number(adjustStockInput.value);
+
+                const searchedItemIndex = products.indexOf(searchedItem);
+
+                if (
+                    searchedItemIndex <= inventory.length &&
+                    inventory[searchedItemIndex]
+                ) {
+                    inventory[searchedItemIndex] += adjustBy;
+                } else {
+                    inventory[searchedItemIndex] = adjustBy;
+                    quantityFound = inventory[products.indexOf(searchedItem)];
+                }
+            }
+
+            const searchedItem =
+                document.getElementById("inventorySearch").value;
+
+            const adjustStockDiv = document.createElement("div");
+
+            const adjustStockLabel = document.createElement("label");
+            adjustStockLabel.innerHTML = `Adjust Stock for ${searchedItem}`;
+
+            const adjustStockInput = document.createElement("input");
+            adjustStockInput.type = "number";
+
+            const adjustStockButton = document.createElement("button");
+            adjustStockButton.innerHTML = "Adjust Stock";
+            adjustStockButton.onclick = adjustStock;
+
+            adjustStockDiv.appendChild(adjustStockLabel);
+            adjustStockDiv.appendChild(adjustStockInput);
+            adjustStockDiv.appendChild(adjustStockButton);
+
+            const resultHeading = document.createElement("h3");
+            resultHeading.innerHTML = `Quantity of ${searchedItem} in stock:`;
+
+            var quantityFound = inventory[products.indexOf(searchedItem)];
+
+            const quantityFoundDisplay = document.createElement("span");
+
+            resultDiv.appendChild(resultHeading);
+
+            if (products.includes(searchedItem)) {
+                if (quantityFound === undefined) {
+                    quantityFoundDisplay.innerHTML =
+                        "Searched item not currently stocked";
+                } else {
+                    quantityFoundDisplay.innerHTML = `Current Stock: ${quantityFound}`;
+                }
+                resultDiv.appendChild(quantityFoundDisplay);
+                resultDiv.appendChild(adjustStockDiv);
+            } else {
+                quantityFoundDisplay.innerHTML = "We do not sell this product";
+                resultDiv.appendChild(quantityFoundDisplay);
+            }
+        }
+    </script>
+</html>
