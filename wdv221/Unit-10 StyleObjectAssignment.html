@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>WDV221 Style Object-CSS Interactions In Class Exercises</title>
+        <style type="text/css">
+            <!--
+            .style1 {color: #FF0000}
+            -->
+        </style>
+    </head>
+
+    <body>
+        <h1>WDV221 Intro Javascript</h1>
+        <h3 id="style-h3">
+            Style Object - CSS Interactions - In Class Exercises
+        </h3>
+        <p>
+            Please modify this page to create the following Dynamic HMTL
+            effects.
+        </p>
+        <p id="red-p">
+            1. Click this paragraph to change the font color to red.
+        </p>
+        <p id="mouse-over-center">
+            2. Mousever this paragraph to center the H3 element containing
+            &quot;CSS Interactions&quot;.
+        </p>
+        <p>3. Click the button to left align the H3 element.</p>
+        <p>
+            <label>
+                <input
+                    type="button"
+                    name="button"
+                    id="button"
+                    value="Submit"
+                    onclick="leftAlignH3()"
+                />
+            </label>
+        </p>
+        <p id="mouse-over-font">
+            4. Mouseover this paragraph to change the font to a font of you
+            choice. 5. Click on this paragraph to return the font to the default
+            font.
+        </p>
+        <p>
+            6. Click on the button to make the word
+            <span id="sale">SALE</span> font size 24.
+        </p>
+        <p>
+            <label>
+                <input
+                    type="button"
+                    name="button2"
+                    id="button2"
+                    value="Submit"
+                    onclick="changeFontSize()"
+                />
+            </label>
+        </p>
+        <p>7. Click on the button to return the word to its original size.</p>
+        <p>
+            <label>
+                <input
+                    type="button"
+                    name="button3"
+                    id="button3"
+                    value="Submit"
+                    onclick="changeFontSizeDefault()"
+                />
+            </label>
+        </p>
+        <p id="yellow-p">
+            8. Use an eventhandler of your choice on this paragraph to make the
+            paragraph background color yellow.
+        </p>
+        <p id="hide-frog">
+            9. Use an onclick event to hide the Frog image shown below.
+        </p>
+        <p>
+            10. Use the following button to make the Frog image shown below
+            reappear.
+        </p>
+        <p>
+            <input
+                type="submit"
+                name="button4"
+                id="button4"
+                value="Submit"
+                onclick="showFrog()"
+            />
+        </p>
+        <p>
+            11. Mouseover the Frong image to make its height and width double
+            its original size.
+        </p>
+        <p>
+            <img src="../images/frog.jpg" width="100" height="100" id="frog" />
+        </p>
+        <p>
+            12. Use a click event on the Frog image to make it return to
+            original size.
+        </p>
+        <p id="double-click">
+            13. Doubleclick on this paragraph to place a border around this
+            paragraph.
+        </p>
+        <p>
+            14. Use an event handler of your choice to remove the border from
+            the previous paragraph.
+        </p>
+        <p id="green">
+            15. Mouseover this paragraph to turn its background color to green.
+            When you mouseoff the paragraph return it to its normal color.
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <script>
+            const styleH3 = document.getElementById("style-h3");
+
+            const red_p = document.getElementById("red-p");
+            red_p.addEventListener("click", changeParagraphColor);
+
+            function changeParagraphColor() {
+                red_p.style.color = "red";
+            }
+
+            const mouseOverCenterP =
+                document.getElementById("mouse-over-center");
+            mouseOverCenterP.addEventListener("mouseover", centerH3);
+
+            function centerH3() {
+                styleH3.style.textAlign = "center";
+            }
+
+            function leftAlignH3() {
+                styleH3.style.textAlign = "left";
+            }
+
+            const mouseOverFontP = document.getElementById("mouse-over-font");
+            mouseOverFontP.addEventListener("mouseover", changeFont);
+            mouseOverFontP.addEventListener("click", changeFontClick);
+
+            function changeFont() {
+                /* console.log('moused over') */
+                mouseOverFontP.style.font = "2rem Arial, sans-serif";
+            }
+
+            function changeFontClick() {
+                mouseOverFontP.style.font = "1rem Times New Roman";
+            }
+
+            const saleSpan = document.getElementById("sale");
+
+            function changeFontSize(changed) {
+                saleSpan.style.fontSize = "24px";
+            }
+
+            function changeFontSizeDefault() {
+                saleSpan.style.fontSize = "1rem";
+            }
+
+            const yellowP = document.getElementById("yellow-p");
+            yellowP.addEventListener("click", changeParagraphColorYellow);
+
+            function changeParagraphColorYellow() {
+                yellowP.style.backgroundColor = "yellow";
+            }
+
+            const hideFrogP = document.getElementById("hide-frog");
+            hideFrogP.addEventListener("click", hideFrog);
+
+            const frogImage = document.getElementById("frog");
+            frogImage.addEventListener("mouseover", doubleSize);
+            frogImage.addEventListener("click", restoreSize);
+
+            function hideFrog() {
+                frogImage.style.display = "none";
+            }
+
+            function showFrog() {
+                frogImage.style.display = "block";
+            }
+
+            function doubleSize() {
+                frogImage.style.width = "200px";
+                frogImage.style.height = "200px";
+            }
+            function restoreSize() {
+                frogImage.style.width = "100px";
+                frogImage.style.height = "100px";
+            }
+
+            const doubleClickP = document.getElementById("double-click");
+            doubleClickP.addEventListener("dblclick", addBorder);
+            doubleClickP.addEventListener("click", removeBorder);
+
+            function addBorder() {
+                doubleClickP.style.border = "1px solid black";
+            }
+
+            function removeBorder() {
+                doubleClickP.style.border = "none";
+            }
+
+            const greenP = document.getElementById("green");
+            greenP.addEventListener("mouseover", backgroundGreen);
+            greenP.addEventListener("mouseout", removeBackroundColor);
+
+            function backgroundGreen() {
+                greenP.style.backgroundColor = "green";
+            }
+
+            function removeBackroundColor() {
+                greenP.style.backgroundColor = "white";
+            }
+        </script>
+    </body>
+</html>
