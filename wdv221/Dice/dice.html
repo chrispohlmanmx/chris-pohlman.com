@@ -1,124 +1,130 @@
 <!DOCTYPE html>
-<head>
-	
-</head>
+<head> </head>
 <html>
-<body >
+    <body>
+        <h1>WDV221</h1>
 
-<h1>WDV221</h1>
+        <div id="rolled-dice"></div>
 
-<img src="imgs/1.PNG" id="dice1" />
-<img src="imgs/1.PNG" id="dice2"/>
+        <p id="diceRollDisplay"></p>
+        <span id="diceRollDisplaySpan"> </span>
 
-<p id="diceRollDisplay"></p>
-<span id="diceRollDisplaySpan"> </span>
+        <div>
+            <label for="numDice">Number of Dice to Roll: </label>
+            <input type="text" id="numDice" value="2" />
+        </div>
+        <div>
+            <label for="valueToBeat">Value to Beat</label>
+            <input type="text" id="valueToBeat" value="7" />
+        </div>
+        <input type="button" value="Roll" onclick="Roll();" />
 
+        <script>
+            /*
+            	1. add an input for the user to guess a number to beat
+            	2. if the user enters a value outside a reason able range we alert them
+            		2-12 range of 2 6 sided dice
+            	3. check to see if the roll was higher than the input number.
+            		displayed diceRollDisplaySpan
+            		"You win" "You lose"
 
-<input type="text"  id="valueToBeat" value="7"/>
-<input type="button" value="Roll" onclick="Roll();" />
+            */
 
+            function validDiceRange(numDice) {
+                var valToBeat = document.getElementById("valueToBeat").value;
+                valToBeat = parseInt(valToBeat); //ensure it's a number
 
-<script>
+                const low = 1 * numDice;
+                const high = 6 * numDice;
 
-/*
-	1. add an input for the user to guess a number to beat
-	2. if the user enters a value outside a reason able range we alert them
-		2-12 range of 2 6 sided dice
-	3. check to see if the roll was higher than the input number.
-		displayed diceRollDisplaySpan
-		"You win" "You lose"
+                if (low <= valToBeat && valToBeat <= high) {
+                    //validDiceRange
+                    console.log(
+                        "The number to beat of " + valToBeat + " is valid"
+                    );
+                    return true;
+                } else {
+                    //not valid
+                    console.log(
+                        "The number to beat of " + valToBeat + " is not valid"
+                    );
+                    return false;
+                }
 
-*/
+                /*
+            	if(valToBeat < 2 || valToBeat > 12)
+            	{
+            		//invalid range
+            		alert("The number to beat of " + valToBeat + " is not valid");
+            		document.getElementById("valueToBeat").value = '';
+            	}*/
+            }
 
-function validDiceRange()
-{
-	var valToBeat = document.getElementById("valueToBeat").value;
-	valToBeat = parseInt(valToBeat); //ensure it's a number
-	
-	
-	if( 2 <= valToBeat && valToBeat <= 12)
-	{
-		//validDiceRange
-		console.log("The number to beat of " + valToBeat + " is valid");
-		return true;
-	}
-	else
-	{
-		//not valid
-		console.log("The number to beat of " + valToBeat + " is not valid");
-		return false;
-	}
-	
-	/*
-	if(valToBeat < 2 || valToBeat > 12)
-	{
-		//invalid range
-		alert("The number to beat of " + valToBeat + " is not valid");
-		document.getElementById("valueToBeat").value = '';
-	}*/
-	
-	
-}
+            //Generate a random # between min and max (including Max)
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
 
+            function Roll() {
+                const rolledDiceDiv = document.getElementById("rolled-dice");
 
-//Generate a random # between min and max (including Max)
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
+                while (rolledDiceDiv.firstChild) {
+                    rolledDiceDiv.removeChild(rolledDiceDiv.firstChild);
+                }
+                var valToBeat = parseInt(
+                    document.getElementById("valueToBeat").value
+                );
 
-function Roll()
-{
+                var numDice = parseInt(
+                    document.getElementById("numDice").value
+                );
 
-	var valToBeat = parseInt(document.getElementById("valueToBeat").value);
-	
-	if(!validDiceRange())
-	{
-		alert("The number to beat of " + valToBeat + " is not valid");
-		return;
-	}
+                if (!validDiceRange(numDice)) {
+                    alert(
+                        "The number to beat of " + valToBeat + " is not valid"
+                    );
+                    return;
+                }
 
+                let diceRolls = [];
+                let total = 0;
 
-	var dice1Roll = getRndInteger(1,6);
-	var dice2Roll = getRndInteger(1,6);	
-	document.getElementById("dice1").src = getDiceImage(dice1Roll);
-	document.getElementById("dice2").src = getDiceImage(dice2Roll);
-	
-	var total = parseInt(dice1Roll) + parseInt(dice2Roll);
-	var msg = "You rolled a total of: " + total;
-	
-	document.getElementById("diceRollDisplay").innerHTML = msg;
-	
-	if(total >= valToBeat)
-	{
-		//We win
-		document.getElementById("diceRollDisplaySpan").innerHTML = "A roll of " + total + " Wins!";
-	}
-	else
-	{
-		//we lose
-		document.getElementById("diceRollDisplaySpan").innerHTML = "A roll of " + total + " Loses!";
-	}
-	
-	return;
-}
+                for (let i = 0; i < numDice; i++) {
+                    diceRolls.push(getRndInteger(1, 6));
+                }
 
-function getDiceImage(inDiceValue)
-{
-	return "imgs/"+ inDiceValue +".PNG";
-}
+                diceRolls.forEach((roll) => {
+                    total += roll;
+                    const diceImage = document.createElement("img");
+                    diceImage.src = getDiceImage(roll);
+                    rolledDiceDiv.appendChild(diceImage);
+                });
 
-	function clearForm()
-	{
-		document.getElementById('diceRollDisplay').innerHTML = '';
-		return;
-	}
-</script>	
+                var msg = "You rolled a total of: " + total;
 
+                document.getElementById("diceRollDisplay").innerHTML = msg;
 
+                if (total >= valToBeat) {
+                    //We win
+                    document.getElementById("diceRollDisplaySpan").innerHTML =
+                        "A roll of " + total + " Wins!";
+                } else {
+                    //we lose
+                    document.getElementById("diceRollDisplaySpan").innerHTML =
+                        "A roll of " + total + " Loses!";
+                }
 
+                return;
+            }
 
-	
+            function getDiceImage(inDiceValue) {
+                return "imgs/" + inDiceValue + ".PNG";
+            }
 
-
-</body>
+            function clearForm() {
+                document.getElementById("diceRollDisplay").innerHTML = "";
+                return;
+            }
+        </script>
+    </body>
 </html>
