@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+
+<script>
+
+	var teamNames = ["Bears","Browns","Reds"];	//create team names array
+	
+	var teamScores = [3,7,4];					//create parallel array 
+	
+	
+	function lookupNames(inNames)
+	{
+		for(var j=0; j<teamNames.length; j++)
+		{
+			if( inNames == teamNames[j])
+			{
+				return j;
+			}
+		}
+		return inNames + " not found";	
+	}//end lookupNames()
+	
+	
+	function getScore() {
+		var inScore = parseInt( document.getElementById("inputScore").value );
+		return inScore;								//send score back to where it is called
+	}
+	
+	//alert( lookupNames("Reds") );		//test Reds
+	//alert( lookupNames("Browns") );		//test Reds
+	//alert( lookupNames("Bears") );		//test Reds
+	//alert( lookupNames("Cubs") );		//test Reds
+	
+	function processTeamNames() {
+		//alert("inside processTeamNames()" );
+		
+		document.getElementById("outputResponse").innerHTML = "";
+		
+		var inTeamName = document.getElementById("inputName").value;
+		var inTeamScore = getScore();	
+		var lookupResponse = lookupNames(inTeamName);
+		
+		if( isNaN(lookupResponse) )
+		{
+			//display not found message	
+			document.getElementById("outputResponse").innerHTML = lookupResponse;
+		}
+		else
+		{
+			teamScores[lookupResponse] += inTeamScore;
+			document.getElementById("outputResponse").innerHTML = inTeamName + " " + teamScores[lookupResponse]; 
+		}
+	}
+
+</script>
+
+
+
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Skill Test - Lookup and Accumulate Arrays</h2>
+<form name="form1" method="post" action="">
+  <fieldset>
+    <legend>Team Scores</legend>
+    <p>
+      <label>Team Name: 
+        <input type="text" name="inputName" id="inputName">
+      </label>
+    </p>
+
+  <p>
+  	<label>Team Score: 
+    	<input type="text" name="inputScore" id="inputScore">
+    </label>
+  </p>
+  <p>
+  	Current Status: <span id="outputResponse"></span> </p>
+  <p>
+ 
+    <input type="button" name="button" id="button" value="Process Team Names" onClick="processTeamNames()">
+    <input type="reset" name="button2" id="button2" value="Reset">
+  </p>
+  </fieldset>   
+</form>
+<h3>Instructions:</h3>
+<p>1. Modify the Reset to clear the current status.</p>
+<p>2. When you enter a team that is not in the teamNames array add it to the teamNames array and add the score to the teamScores array. </p>
+<p>3. Add a function that will display all teams and their current score on the page. Call this from processTeamNames().</p>
+<p>4. Add a button to display all teams and their current score on the page.
+<p><strong>Extra Credit:</strong>
+    <ul>
+      <li>Highlight the team with the highest score.</li>
+      <li>Display the teams from high score to low score</li>
+    </ul>
+</p>
+</body>
+</html>
