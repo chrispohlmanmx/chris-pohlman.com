@@ -4,11 +4,58 @@
 <meta charset="utf-8">
 <title>WDV221 Intro Javascript</title>
 
+
+
+
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Skill Test - Lookup and Accumulate Arrays</h2>
+<form name="form1" method="post" action="" id="form1">
+  <fieldset>
+    <legend>Team Scores</legend>
+    <p>
+      <label>Team Name: 
+        <input type="text" name="inputName" id="inputName">
+      </label>
+    </p>
+
+  <p>
+  	<label>Team Score: 
+    	<input type="text" name="inputScore" id="inputScore">
+    </label>
+  </p>
+  <p>
+  	Current Status: <span id="outputResponse"></span> </p>
+  <ul id="display-all"></ul>
+  <p>
+ 
+    <input type="button" name="button" id="button" value="Process Team Names" onClick="processTeamNames()">
+    <input type="button" name="button2" id="button2" value="Reset" onclick="resetStatus()">
+  </p>
+  </fieldset>   
+</form>
+<h3>Instructions:</h3>
+<p>1. Modify the Reset to clear the current status.</p>
+<p>2. When you enter a team that is not in the teamNames array add it to the teamNames array and add the score to the teamScores array. </p>
+<p>3. Add a function that will display all teams and their current score on the page. Call this from processTeamNames().</p>
+<p>4. Add a button to display all teams and their current score on the page.
+<p><strong>Extra Credit:</strong>
+    <ul>
+      <li>Highlight the team with the highest score.</li>
+      <li>Display the teams from high score to low score</li>
+    </ul>
+</p>
+</body>
+
+
 <script>
 
 	var teamNames = ["Bears","Browns","Reds"];	//create team names array
 	
-	var teamScores = [3,7,4];					//create parallel array 
+	var teamScores = [3,7,4];	
+	const displayAllUl = document.getElementById('display-all');				//create parallel array 
 	
 	
 	function lookupNames(inNames)
@@ -20,7 +67,15 @@
 				return j;
 			}
 		}
-		return inNames + " not found";	
+
+		if(inNames !== '' && teamScores !== NaN){
+			teamNames.push(inNames)
+			teamScores.push(0)
+			return(teamNames.length -1)
+		}else{
+			return inNames + " not valid"
+		}
+		
 	}//end lookupNames()
 	
 	
@@ -53,50 +108,35 @@
 			teamScores[lookupResponse] += inTeamScore;
 			document.getElementById("outputResponse").innerHTML = inTeamName + " " + teamScores[lookupResponse]; 
 		}
+
+		displayAllTeams()
+	}
+
+	function displayAllTeams(){
+		
+
+		while (displayAllUl.firstChild){
+			displayAllUl.removeChild(displayAllUl.firstChild)
+		}
+
+		for (let i =0; i<teamNames.length;i++){
+			const teamInfoLi = document.createElement('li')
+			teamInfoLi.innerHTML = `${teamNames[i]}: ${teamScores[i]}`
+
+			displayAllUl.appendChild(teamInfoLi)
+
+		}
+	}
+
+
+
+	function resetStatus(){
+		document.getElementById("outputResponse").innerHTML = "";
+		document.getElementById('form1').reset();
+		while (displayAllUl.firstChild){
+			displayAllUl.removeChild(displayAllUl.firstChild)
+		}
 	}
 
 </script>
-
-
-
-</head>
-
-<body>
-<h1>WDV221 Intro Javascript</h1>
-<h2>Skill Test - Lookup and Accumulate Arrays</h2>
-<form name="form1" method="post" action="">
-  <fieldset>
-    <legend>Team Scores</legend>
-    <p>
-      <label>Team Name: 
-        <input type="text" name="inputName" id="inputName">
-      </label>
-    </p>
-
-  <p>
-  	<label>Team Score: 
-    	<input type="text" name="inputScore" id="inputScore">
-    </label>
-  </p>
-  <p>
-  	Current Status: <span id="outputResponse"></span> </p>
-  <p>
- 
-    <input type="button" name="button" id="button" value="Process Team Names" onClick="processTeamNames()">
-    <input type="reset" name="button2" id="button2" value="Reset">
-  </p>
-  </fieldset>   
-</form>
-<h3>Instructions:</h3>
-<p>1. Modify the Reset to clear the current status.</p>
-<p>2. When you enter a team that is not in the teamNames array add it to the teamNames array and add the score to the teamScores array. </p>
-<p>3. Add a function that will display all teams and their current score on the page. Call this from processTeamNames().</p>
-<p>4. Add a button to display all teams and their current score on the page.
-<p><strong>Extra Credit:</strong>
-    <ul>
-      <li>Highlight the team with the highest score.</li>
-      <li>Display the teams from high score to low score</li>
-    </ul>
-</p>
-</body>
 </html>
