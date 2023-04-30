@@ -1,66 +1,126 @@
 <!DOCTYPE html>
-<head>
-
-</head>
+<head> </head>
 <html>
-<body onload="" >
+    <body onload="">
+        <h1 id="Heading1" class="">WDV221</h1>
 
-<h1 id="Heading1" class="">WDV221</h1>
+        <style></style>
 
-<style>
+        <script>
+            function resetForm() {
+                const emailInput = document.getElementById("userEmail");
+                const errorMessageSpan =
+                    document.getElementById("errorMessage");
 
+                const userForm = document.getElementById("myForm");
 
-</style>
+                userForm.reset();
+                errorMessageSpan.innerHTML = "";
+                emailInput.style.border = "1px solid black";
+            }
 
+            function ValidateForm() {
+                const emailInput = document.getElementById("userEmail");
+                emailInputValue = emailInput.value;
+                const errorMessageSpan =
+                    document.getElementById("errorMessage");
 
-<script>
+                const userForm = document.getElementById("myForm");
 
-	function ValidateForm()
-	{
+                if (!emailInputValue.includes("@")) {
+                    errorMessageSpan.innerHTML = "Invalid Email Entered";
+                    emailInput.style.border = "2px solid red";
+                } else {
+                    errorMessageSpan.innerHTML = "";
+                    emailInput.style.border = "1px solid black";
+                }
+            }
 
-	}
+            function checkPasswordStrength() {
+                const passwordInput =
+                    document.getElementById("userPassword").value;
 
-	
+                const passwordStrengthSpan =
+                    document.getElementById("passwordStrength");
 
-</script>
+                if (passwordInput.length < 5) {
+                    passwordStrengthSpan.style.backgroundColor = "red";
+                    passwordStrengthSpan.innerHTML = "Weak";
+                } else if (
+                    passwordInput.length > 5 &&
+                    passwordInput.length < 10
+                ) {
+                    passwordStrengthSpan.style.backgroundColor = "yellow";
+                    passwordStrengthSpan.innerHTML = "Medium";
+                } else {
+                    passwordStrengthSpan.style.backgroundColor = "green";
+                    passwordStrengthSpan.innerHTML = "Strong";
+                }
+            }
+        </script>
 
-<h2> Create New User </h2>
+        <h2>Create New User</h2>
 
-<form id="myForm">
-	<p>User Email:<input type="text" id="userEmail"/> </p>
-	<p>Password:<input type="password" id="userPassword" /> <span id="passwordStrength"></span>  </p>
-	
-	<input type="button" onclick="ValidateForm();" value="submit"/>
-	<input type="reset" value="reset" />
-	<span id="errorMessage"></span>
-</form>
+        <form id="myForm">
+            <p>User Email:<input type="text" id="userEmail" /></p>
+            <p>
+                Password:<input
+                    type="password"
+                    id="userPassword"
+                    onkeyup="checkPasswordStrength()"
+                />
+                <span id="passwordStrength"></span>
+            </p>
 
-<h2> Instructions </h2>
-<ol>
-	<li>Create an email validation function that is triggered from the button click even and does the following:</li>
-	<ol>
-		<li>
-			Gets the email address entered in the text box and performs validation check for an "@"
-		</li> 
-		<li>
-			Gives an error message if the email is missing an "@". The message should be displayed in the errorMessage span.
-		</li>
-		<li>
-			Sets a solid 2px red border around the userEmail text box
-		</li>
-		<li>
-			Clears the errorMessage span and resets the border of userEmail if there are no errors. This should also happen when the reset button is pressed.
-		</li>  
-	</ol>
-	<li>
-		Create a function called checkPasswordStrength that triggers on the keyUp of the userPassword text box.
-	</li>
-	<ol>
-		<li>If the length of the password is less than 5 characters display the word "Weak" in red in the passwordStrength span</li>
-		<li>If the length of the password is greater than 5 characters but less than 10 display the word "Medium" in yellow in the passwordStrength span</li>
-		<li>If the length of the password is greater than 10 characters display the word "Strong" in green in the passwordStrength span</li>
-	</ol>
-</ol>
+            <input type="button" onclick="ValidateForm();" value="submit" />
+            <input type="button" value="reset" onclick="resetForm()" />
+            <span id="errorMessage"></span>
+        </form>
 
-</body>
+        <h2>Instructions</h2>
+        <ol>
+            <li>
+                Create an email validation function that is triggered from the
+                button click even and does the following:
+            </li>
+            <ol>
+                <li>
+                    Gets the email address entered in the text box and performs
+                    validation check for an "@"
+                </li>
+                <li>
+                    Gives an error message if the email is missing an "@". The
+                    message should be displayed in the errorMessage span.
+                </li>
+                <li>
+                    Sets a solid 2px red border around the userEmail text box
+                </li>
+                <li>
+                    Clears the errorMessage span and resets the border of
+                    userEmail if there are no errors. This should also happen
+                    when the reset button is pressed.
+                </li>
+            </ol>
+            <li>
+                Create a function called checkPasswordStrength that triggers on
+                the keyUp of the userPassword text box.
+            </li>
+            <ol>
+                <li>
+                    If the length of the password is less than 5 characters
+                    display the word "Weak" in red in the passwordStrength span
+                </li>
+                <li>
+                    If the length of the password is greater than 5 characters
+                    but less than 10 display the word "Medium" in yellow in the
+                    passwordStrength span
+                </li>
+                <li>
+                    If the length of the password is greater than 10 characters
+                    display the word "Strong" in green in the passwordStrength
+                    span
+                </li>
+            </ol>
+        </ol>
+    </body>
 </html>
