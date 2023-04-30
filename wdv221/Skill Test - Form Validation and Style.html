@@ -11,12 +11,15 @@
                 const emailInput = document.getElementById("userEmail");
                 const errorMessageSpan =
                     document.getElementById("errorMessage");
+                const passwordStrengthSpan =
+                    document.getElementById("passwordStrength");
 
                 const userForm = document.getElementById("myForm");
 
                 userForm.reset();
                 errorMessageSpan.innerHTML = "";
                 emailInput.style.border = "1px solid black";
+                passwordStrengthSpan.innerHTML = "";
             }
 
             function ValidateForm() {
