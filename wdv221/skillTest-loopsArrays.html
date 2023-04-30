@@ -1,48 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>WDV221 Intro Javascript</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>WDV221 Intro Javascript</title>
 
-<script>
+        <script>
+            var products = ["Garden Trowel", "Yard Spade", "Planting Spade"];
+            var productNumber = ["gt200", "yard-1", "plant-4"];
 
-	var products = ["Garden Trowel","Yard Spade","Planting Spade"];
-	var productNumber = ["gt200","yard-1","plant-4"];
-	
-	var selectionFactors = ["Price","Quality","Reviews","Pictures"];
-	
-	var references = ["Field and Stream","Home and Garden","Plant Life"];
+            var selectionFactors = ["Price", "Quality", "Reviews", "Pictures"];
 
-</script>
+            var references = [
+                "Field and Stream",
+                "Home and Garden",
+                "Plant Life",
+            ];
+        </script>
+    </head>
 
+    <body>
+        <h1>WDV221 Intro Javascript</h1>
+        <h2>Skill Test - Loops and Arrays</h2>
+        <form name="form1" method="post" action="" id="form1">
+            <fieldset>
+                <label
+                    >1. Which product did you purchase?
+                    <select name="selectProduct" id="selectProduct"></select>
+                    <br />
+                    <br />
+                    2. Please choose the primary factor in why you purchased our
+                    product:<br />
+                    <div id="factors"></div>
+                    <br />
+                    3. How did your hear about us? Please select all that
+                    apply:<br />
+                    <div id="references"></div>
+                    <input
+                        type="button"
+                        name="button"
+                        id="button"
+                        value="Submit"
+                        onclick="submitForm()"
+                    />
+                    <input
+                        type="reset"
+                        name="button2"
+                        id="button2"
+                        value="Reset"
+                    />
+                    <br />
+                </label>
+                <legend>Your Input Matters</legend>
+            </fieldset>
+        </form>
+        <h3>Instructions:</h3>
+        <p>
+            1. Use the products array and the productNumber array to dynamically
+            populate the select menu. Include the productNumbers as value
+            atttributes.
+        </p>
+        <p>
+            2. Use the selectionFactors array to dynamically create a set of
+            radio buttons.
+        </p>
+        <p>
+            3. Use the references array to dynamically create a set of check
+            boxes.
+        </p>
+        <p>&nbsp;</p>
+    </body>
 
+    <script>
+        const productSelect = document.getElementById("selectProduct");
 
-</head>
+        for (let i = 0; i < products.length; i++) {
+            const productOption = document.createElement("option");
+            productOption.value = productNumber[i];
+            productOption.innerHTML = products[i];
+            productSelect.appendChild(productOption);
+        }
 
-<body>
-<h1>WDV221 Intro Javascript</h1>
-<h2>Skill Test - Loops and Arrays</h2>
-<form name="form1" method="post" action="">
-  <fieldset>
-  	<label>1. Which product did you purchase?
-  	  <select name="selectProduct" id="selectProduct">
-      </select>
-      <br>
-      <br>
-      2. Please choose the primary factor in why you purchased our product:<br>
-      <br>
-  	3. How did your hear about us? Please select all that apply:<br>
-  	<input type="submit" name="button" id="button" value="Submit">
-  	<input type="reset" name="button2" id="button2" value="Reset">
-  	<br>
-  	</label>
-  	<legend>Your Input Matters</legend>
-  </fieldset>
-</form>
-<h3>Instructions:</h3>
-<p>1. Use the products array and the productNumber array to dynamically populate the select menu. Include the productNumbers as value atttributes.</p>
-<p>2. Use the selectionFactors array to dynamically create a set of radio buttons. </p>
-<p>3. Use the references array to dynamically create a set of check boxes. </p>
-<p>&nbsp;</p>
-</body>
+        const factorDiv = document.getElementById("factors");
+        const referencesDiv = document.getElementById("references");
+
+        selectionFactors.forEach((factor) => {
+            const factorRadioInput = document.createElement("input");
+            factorRadioInput.type = "radio";
+            factorRadioInput.value = factor;
+            factorRadioInput.id = factor;
+            factorRadioInput.name = "factor";
+
+            const factorRadioLabel = document.createElement("label");
+            factorRadioLabel.htmlFor = factor;
+            factorRadioLabel.innerHTML = factor;
+
+            factorDiv.appendChild(factorRadioInput);
+            factorDiv.appendChild(factorRadioLabel);
+        });
+
+        references.forEach((reference) => {
+            const referenceCheckbox = document.createElement("input");
+            referenceCheckbox.type = "checkbox";
+            referenceCheckbox.id = reference;
+
+            const referenceLabel = document.createElement("label");
+            referenceLabel.htmlFor = reference;
+            referenceLabel.innerHTML = reference;
+
+            referencesDiv.appendChild(referenceCheckbox);
+            referencesDiv.appendChild(referenceLabel);
+        });
+
+        function submitForm() {
+            alert("Thanks for your submission!");
+            document.getElementById("form1").reset();
+        }
+    </script>
 </html>
